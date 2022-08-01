@@ -78,10 +78,11 @@ auth_classes = [
     'rest_framework.authentication.SessionAuthentication',
     'rest_framework_simplejwt.authentication.JWTAuthentication'
 ]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': auth_classes,
     "DEFAULT_PERMISSION_CLASSES": [
-        'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+        'rest_framework.permissions.AllowAny'
     ],
     'TEST_REQUEST_DEFAULT_FORMAT': 'json',
     'TEST_REQUEST_RENDERER_CLASSES': [

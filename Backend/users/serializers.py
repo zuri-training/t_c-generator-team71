@@ -5,6 +5,9 @@ from .models import User
 from django.contrib.auth.password_validation import validate_password
 from rest_framework_simplejwt.tokens import RefreshToken
 
+from p_p.serializers import GetPrivacyPolicySerializer
+from t_c.serializers import GetTCSerializer
+
 
 class RegisterUserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True, required=True, validators=[validate_password])
@@ -51,8 +54,8 @@ class GetUserSerializer(serializers.ModelSerializer):
 
 
 class GetUserDocumentsSerializer(serializers.ModelSerializer):
-    privacy_policies = serializers.PrimaryKeyRelatedField(many=True, read_only=True)
-
+    terms = GetTCSerializer(many=True)
+    privacy_policies = GetPrivacyPolicySerializer(many=True)
     class Meta:
         model = User
         fields = [
