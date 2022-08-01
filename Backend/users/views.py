@@ -3,8 +3,9 @@ from rest_framework import generics, permissions
 
 # Create your views here.
 from .models import User
-from .serializers import GetUserSerializer, GetUserDocumentsSerializer, RegisterUserSerializer
-from .permissions import IsOwner, IsUser
+from .serializers import (GetUserSerializer, GetUserDocumentsSerializer,
+                          RegisterUserSerializer)
+from .permissions import IsUser
 
 
 class UserListAPIView(generics.ListAPIView):
@@ -27,7 +28,7 @@ class GetUserDetailAPIView(generics.RetrieveAPIView):
 class DocumentsListAPIView(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = GetUserDocumentsSerializer
-    permission_classes = [permissions.IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated, IsUser]
 
 
 class UpdateUserDetailAPIView(generics.UpdateAPIView):
@@ -36,4 +37,10 @@ class UpdateUserDetailAPIView(generics.UpdateAPIView):
     lookup_field = 'pk'
     permission_classes = [permissions.IsAuthenticated, IsUser]
 
+
+class DeleteUserAPIView(generics.DestroyAPIView):
+    queryset = User.objects.all()
+    serializer_class = GetUserSerializer
+    lookup_field = 'pk'
+    permission_classes = [permissions.IsAuthenticated, IsUser]
 

@@ -160,7 +160,6 @@ dmypy.json
 cython_debug/
 
 # db
-migrations
 db.sqlite3
 
 # PyCharm
