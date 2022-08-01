@@ -13,7 +13,7 @@
 - Run `python manage.py runserver to run the server`
 
 ## Testing the endpoints
-- go to localhost:8000/swagger/ to test with the swagger ui doc or localhost:8000/redoc/ 
+- go to localhost:8000/api/ to test with the swagger ui doc or localhost:8000/ 
 ### Testing with a frontend client
 - Go to the [settings.py](/terms_gen_home/settings.py)
 - Add your frontend url to the 'CORS_ALLOWED_ORIGINS' list
