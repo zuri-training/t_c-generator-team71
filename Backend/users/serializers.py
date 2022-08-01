@@ -40,7 +40,6 @@ class RegisterUserSerializer(serializers.ModelSerializer):
 
 
 class GetUserSerializer(serializers.ModelSerializer):
-    # id = serializers.IntegerField(read_only=True)
     class Meta:
         model = User
         fields = [
