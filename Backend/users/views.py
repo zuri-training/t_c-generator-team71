@@ -4,7 +4,7 @@ from rest_framework import generics, permissions
 # Create your views here.
 from .models import User
 from .serializers import (GetUserSerializer, GetUserDocumentsSerializer,
-                          RegisterUserSerializer)
+                          RegisterUserSerializer, ChangePasswordSerializer)
 from .permissions import IsUser
 
 
@@ -44,3 +44,8 @@ class DeleteUserAPIView(generics.DestroyAPIView):
     lookup_field = 'pk'
     permission_classes = [permissions.IsAuthenticated, IsUser]
 
+class ChangePasswordAPIView(generics.UpdateAPIView):
+    queryset = User.objects.all()
+    serializer_class = ChangePasswordSerializer
+    lookup_field = 'pk'
+    permission_classes = [permissions.IsAuthenticated, IsUser]

@@ -39,6 +39,7 @@ urlpatterns = [
     path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),  # generate login token
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),  # generate refresh token
     path('api/token/verify/', jwt_views.TokenVerifyView.as_view(), name='token_verify'),  # verify token
+    path('api/password_reset/', include('django_rest_passwordreset.urls', namespace='password_reset')),
     # documentation urls
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^api/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
