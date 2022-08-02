@@ -9,6 +9,10 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
+import environ
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 from pathlib import Path
 
@@ -42,6 +46,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'django.contrib.admin',
     'rest_framework_simplejwt',
+    'django_rest_passwordreset',
     'drf_yasg',
     'corsheaders',
 ]
@@ -62,6 +67,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'terms_gen_home.urls'
 CORS_URLS_REGEX = r"^/api/.*"
 CORS_ALLOWED_ORIGINS = []
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_SSL = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = env('EMAIL')
+EMAIL_HOST_PASSWORD = env('EMAIL_PASSWORD')
 
 # TODO:
 
