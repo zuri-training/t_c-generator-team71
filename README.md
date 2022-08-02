@@ -103,9 +103,15 @@ or
     git commit -m "Add <your_file_names>"
 ```
 
-11. Set your upstream branch to the new branch you created and push that branch to your forked repo
+11. Push your changes
+- If you are PUSHING FOR THE FIRST TIME <br />
+ Set your upstream branch to the new branch you created and push that branch to your forked repo
 ```js
     git push --set-upstream origin <your_branch_name>
+```
+- If you have pushed a change before, and you want to push some more changes later. Run
+```js
+    git push origin <your_branch_name>
 ```
 
 12. Run `git status` and you should get a response like this
