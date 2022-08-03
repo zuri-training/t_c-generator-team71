@@ -65,7 +65,7 @@ p{
 .logo a{
     font-size:var(--logo-size);
     color: var(--primary-color);
-    font-weight: 600;
+    font-weight: 700;
 }
 .section_title{
     font-size: var(--section-size);
