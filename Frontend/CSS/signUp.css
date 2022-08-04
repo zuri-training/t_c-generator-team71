@@ -133,24 +133,24 @@ button{
     content: "";
     background-color:#07302e;
     width: 117px;
-    height: 30px;
+    height: 38px;
     border-radius:7px;
     opacity:0;
     top: 0;
     left: 0;
-    transition: all .8s;
+    transition: all .4s;
 }
 
 .btn:active:before{
     position: absolute;
     content: "";
-    width: 119px;
-    height: 39px;
+    width: 117px;
+    height: 38px;
     border-radius:7px;
     opacity: 1;
     top: 0;
     left: 0;
-    transition:0;
+    transition:all .5s;
 }
 .link_{
     font-size: var(--text-size);
