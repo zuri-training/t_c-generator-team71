@@ -56,6 +56,7 @@ class GetUserSerializer(serializers.ModelSerializer):
 class GetUserDocumentsSerializer(serializers.ModelSerializer):
     terms = GetTCSerializer(many=True)
     privacy_policies = GetPrivacyPolicySerializer(many=True)
+
     class Meta:
         model = User
         fields = [
@@ -63,3 +64,32 @@ class GetUserDocumentsSerializer(serializers.ModelSerializer):
             'privacy_policies',
             'terms'
         ]
+
+
+class ChangePasswordSerializer(serializers.ModelSerializer):
+    password = serializers.CharField(write_only=True,
+                                     required=True,
+                                     validators=[validate_password])
+    new_password = serializers.CharField(write_only=True,
+                                         required=True,
+                                         validators=[validate_password])
+    return_data = serializers.SerializerMethodField(read_only=True)
+
+    class Meta:
+        model = User
+        fields = ['password',
+                  'new_password',
+                  'return_data']
+
+    def validate(self, data):
+        if not self.context['request'].user.check_password(data.get('password')):
+            raise serializers.ValidationError({'password': 'incorrect old password'})
+        return data
+
+    def update(self, instance, validated_data):
+        instance.set_password(validated_data['new_password'])
+        instance.save()
+        return instance
+
+    def get_return_data(self, data):
+        return {'success': True}

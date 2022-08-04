@@ -7,8 +7,6 @@ Codebase for proj-t_c-generator - Team 71
 # Overview
 > The purpose of this project is to build a web application that helps users to generate their Terms and Conditions and Privacy Policy agreements for their company or website. 
 
-### Project Design
-> <a href="https://bit.ly/3Q2pn1C">Team71_TnC_Generator</a>
 
 
 ### Directory Structure
