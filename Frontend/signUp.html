@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="/Frontend/JS/signUp.js" defer></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/signUp.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <nav class="nav container_two">
+            <h1 class="logo"><a href="/Frontend/index.html">Termbuddy</a></h1>
+            <button class="btn btn_altt" >
+                <a href="/Frontend/login.html" class="link_">Sign In</a>
+            </button>
+        </nav>
+    </header>
+    <main>
+        <section class="sign_up_section">
+                <div class="split container">
+                       <div class="img_part">
+                           <img src="images/signUp-amico.svg" alt="hero" class="hero_img">
+                       </div>
+                       <div class="form_part">
+                        <!--placeholder method will hook to backend later-->
+                        <form action="#" name="signUp" class="form" id="form" method="post">
+                            <h1 class=" section_title sign_up">Sign up</h1>
+                                <div class="form_field ">
+                                    <label for="firstName" class="input">First Name</label>
+                                    <div class="svg_con">
+                                       <input type="text" class=" input_field" placeholder="john" name="firstName" id="firstName">
+                                       <img src="images/user.svg" alt="" class="x_icon">
+                                       <small>
+                                           <img src="images/Icons.svg" alt="" class="error">
+                                           First Name cannot be empty
+                                        </small>
+                                    </div>
+                                </div>
+
+                                <div class="form_field ">
+                                     <label for="lastName" class="input">Last Name</label>
+                                     <div class="svg_con">
+                                        <input type="text" class=" input_field" placeholder="Doe" name="lastName" id="lastName">
+                                         <img src="images/user.svg" alt="" class="x_icon">
+                                         <small>
+                                             <img src="images/Icons.svg" alt="" class="error">
+                                             Last Name cannot be empty
+                                        </small>
+                                        </div>
+                                </div>
+                
+                                <div class="form_field">
+                                    <label for="email" class="input">Email</label>
+                                    <div class="svg_con">
+                                       <input type="text" class=" input_field" placeholder="johndoe@gmail.com" name="email" id="email">
+                                        <img src="images/sms.svg" alt="" class="x_icon">
+                                        <small>
+                                            <img src="images/Icons.svg" alt="" class="error">
+                                            Provide a valid email address
+                                        </small>
+                                     </div>
+                                </div>
+                               
+                                <div class="form_field">
+                                   <label for="password" class="input">Password</label>
+                                   <div class="svg_con">
+                                       <input type="password" class="input_field " placeholder="********" name="password" id="password">
+                                        <img src="images/lock.svg" alt="" class="x_icon">
+                                        <img src="images/eye-slash.svg" alt="" class="x_icon_two">
+                                        <small class="pass_err">
+                                            <img src="images/Icons.svg" alt="" class="error">
+                                            <p >Enter a password which should at least be a  minimum of 8 characters including a minimum  of 1 number, an uppercase letter and a special character [!@#$%^&*]</p>
+                                        </small>
+                                        </div>
+                                </div>
+                                
+                                <div class="check_area">
+                                <label for="checkbox" class="input">
+                                  <div class="svg_con_two">
+                                   <input type="checkbox" class=" inp" name="checkbox"  id="checkbox" >
+                                     <p >I Agree to all the <a href="#" class="terms">Terms and Conditions</a></p>
+                                     </div>
+                                     <small class="pass_err">
+                                        <img src="images/Icons.svg" alt="" class="error">
+                                        <p>please agree to the terms and conditions</p>
+                                    </small>
+                                </label>
+                                </div>
+                                <button class="btn_alt btn_altt" data-item="Sign In">
+                                    <a href="#"  class="link_"> Sign Up</a>
+                                </button>
+                        </form>
+                        <div class="form_bottom">
+                            <h2 class="section_title section_title_normal">Or Sign Up with</h2>
+                            <div class="sign_up_other">
+                                <button class="btn_other">
+                                    <img src="images/Group.svg" alt="google logo" class="z_icon">
+                                     Google
+                                </button>
+                                <button class="btn_other">
+                                    <img src="images/apple_logo.svg" alt="apple logo" class="z_icon">
+                                    Apple
+                                </button>
+                            </div>
+                            <p class="section_title_normal">Already have an account? <a href="/Frontend/login.html">Sign in</a> </p>
+                        </div>
+                       </div>
+        </section>
+    </main>
+    
+</body>
+</html>
