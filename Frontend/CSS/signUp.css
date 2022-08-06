@@ -60,20 +60,19 @@ input{
 input{
     border: 1px solid #BABABA;
     border-radius: 8px;
+    outline: none;
 }
 input[type='checkbox'] {
-    accent-color:#2B7A78
-    ;
-}
-input:focus, input[type]:focus{   
-    border-color: 1.9px solid var(--text-color);
-    outline: none;
+    accent-color:#2B7A78;
 }
 
 button{
     cursor: pointer;
 }
 
+a {
+    -webkit-tap-highlight-color: transparent;
+}
 
 
 
@@ -118,7 +117,7 @@ button{
     font-family: 700;
 }
 .btn{
-    position: relative;
+    /* position: relative; */
     font-weight: 700;
     background-color: #07302e;
     width: 120px;
@@ -128,7 +127,7 @@ button{
     border-radius: 8px;
     font-family: var(--primary-font);
 }
-.btn::before{
+/* .btn::before{
     position: absolute;
     content: "";
     background-color:#07302e;
@@ -156,7 +155,7 @@ button{
     font-size: var(--text-size);
     color:#2B7A78;
     font-weight: 600;
-}
+} */
 .btn_alt{
     position: relative;
     font-weight: 700;
@@ -203,7 +202,7 @@ button{
 }
 .btn_altt{
     background-color: #2B7A78;
-    padding:var(--btn-padding-two);
+    /* padding:var(--btn-padding-two); */
     border-radius: 8px;
 }
 .btn_altt a{
