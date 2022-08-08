@@ -14,17 +14,18 @@ xIcon.addEventListener('click', ()=>{
         inputType.setAttribute('type', 'text')
         //remove the original attribute then set a new attribute with a diffrent src path [your alternate icon]
         xIcon.removeAttribute('src')
-        xIcon.setAttribute('src', 'images/eye.svg')
+        xIcon.setAttribute('src', './images/eye.svg')
     }else{
         //reset
         inputType.setAttribute('type', 'password')
         xIcon.removeAttribute('src')
-        xIcon.setAttribute('src', 'images/eye-slash.svg')
+        xIcon.setAttribute('src', './images/eye-slash.svg')
     }
     password=!password
 })
 
-form.addEventListener('submit', e=>{
+form.addEventListener('submit', e => {
+    e.preventDefault()
     //on submit, carryout the following checks
     let firstnameValid=checkFirstName()
     let lastnameValid=checkLastName()
@@ -35,11 +36,37 @@ form.addEventListener('submit', e=>{
     //formValid will be true if all checks passes 
     let formValid=firstnameValid && lastnameValid && emailValid && passwordValid && checkBoxChecked
     //submit the form if formValid is true
-    if(formValid){
-        form.submit()
+    if (formValid) {
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+        fetch('http://127.0.0.1:8000/api/users/register/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        }).then(res => {
+            if (res.status === 201) {
+                window.location.href = 'http://127.0.0.1:5500/dashboard.html'
+            } else {
+                incorrect.style.display = 'flex';
+                incorrectText.innerHTML = 'Email already exists';
+
+                setTimeout(() => {
+                    incorrect.style.display = 'none';
+                }, 2500)
+            }
+            console.log(res);
+            return res.json();
+        }).then(data => {
+            console.log(data)
+            const authToken = data.tokens.refresh;
+            localStorage.setItem('token', authToken);
+        }).catch(error => console.log(error));
     //else prevent the form from submitting
     }else{
-        e.preventDefault()
+        
     }
     
 })

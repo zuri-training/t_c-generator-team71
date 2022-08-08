@@ -52,6 +52,7 @@ a {
   width: 250px;
   height: 248px;
   margin: auto;
+  padding-bottom: 3rem;
 }
 
 .img {
@@ -62,6 +63,9 @@ a {
 .signin {
   width: 343px;
   margin: auto;
+  padding: 2rem;
+  background-color: #FEFEFE;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .signin h2 {
@@ -124,6 +128,7 @@ input:focus {
 .psw {
   display: flex;
   align-items: center;
+  margin-top: .5rem;
 }
 
 .psw-remember {
@@ -148,16 +153,36 @@ input:focus {
   text-align: right;
 }
 
+.error-message {
+  background: #F9C3B4;
+  color: #ED4A1F;
+  font-size: .95rem;
+  padding: .3rem .9rem;
+  border-radius: .5rem;
+  margin-top: .4rem;
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  text-align: left;
+  display: none;
+}
+
+.error-icon {
+  transform: translateY(2px);
+}
+
+.error1 .err-mail,
+.error2 .err-pass,
+.error .error-message {
+  display: flex;
+}
+
 .psw-forgot p a {
   text-decoration: none;
   color: #2b7a78;
   font-weight: 600;
   font-size: 1rem;
   line-height: 24px;
-}
-
-.password {
-  margin-bottom: 1.5rem;
 }
 
 .signin-btn {
