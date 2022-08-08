@@ -137,7 +137,7 @@ button{
     border-radius: 8px;
     font-family: var(--primary-font);
 }
-.btn::before{
+/* .btn::before{
     position: absolute;
     content: "";
     background-color:#07302e;
@@ -160,7 +160,7 @@ button{
     top: 0;
     left: 0;
     transition:all .5s;
-}
+} */
 .link_{
     font-size: var(--text-size);
     color:#2B7A78;
