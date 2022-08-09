@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/login.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="nav">
+        <a class="website-logo" href="/Frontend/index.html">TermBuddy</a>
+        <a class="signup-btn" href="/Frontend/signUp.html">Sign Up</a>
+      </nav>
+    </header>
+    <main>
+      <div class="main">
+        <div class="img-illustration"> 
+          <img
+            src="images/signIn-amico.svg"   
+            alt="image illustration of logging in"
+            class="img"
+          />
+        </div>
+
+        <div class="signin">
+           <h2>Sign in</h2>
+          <form action="" class="form">
+            <div class="form-div">
+              <label for="email">Email</label>
+              <div class="icon">
+                <img
+                  class="form-icons"
+                  src="images/Vector1.svg"
+                  alt="email icon"
+                />
+                <input
+                  type="email"
+                  name=""
+                  id="email"
+                  class="form-input email"
+                  placeholder="johndoe@gmail.com"
+                />
+              </div>
+            </div>
+            <div class="form-div">
+              <label for="password">Password</label>
+              <div class="icon2">
+                <img
+                  src="images/Vector.svg"
+                  alt="a lock  icon for the password"
+                  class="img1 form-icons"
+                />
+                <img
+                  src="images/eye-slash.svg"
+                  alt="password toggle"
+                  class="img2 form-icons"
+                />
+              </div>
+              <input
+                type="password"
+                name=""
+                id="password"
+                class="form-input password"
+                placeholder="********"
+              />
+            </div>
+            <div class="psw">
+              <div class="psw-remember">
+                <input
+                  class="checkbox remember-me"
+                  type="checkbox"
+                  name=""
+                  id="remember-me"
+                />
+                <label for="remember-me">Remember me</label>
+              </div>
+              <div class="psw-forgot">
+                <p><a href=""> Forgot Password?</a></p>
+              </div>
+            </div>
+            <div>
+              <button class="signin-btn">Sign in</button>
+            </div>
+            <div class="signin-option">
+              <h2>Or sign in with</h2>
+              <div class="signin-options">
+                <div class="btn-icon">
+                  <img src="images/Group.svg" alt="google icon" />
+                  <p>Google</p>
+                </div>
+                <div class="btn-icon">
+                  <img src="images/Apple (icon — Colour).svg" alt="apple icon" />
+                  <p>Apple</p>
+                </div>
+              </div>
+              <p class="signup-text">
+                Don't have an account? <a href="/Frontend/signUp.html" class="cta"><b>Sign up</b></a>
+              </p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
