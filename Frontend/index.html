@@ -19,14 +19,15 @@
                 <div class="logo">
                     <span>Termbuddy</span>
                 </div>
+
+                <div class="hamburger__wrapper">
+                    <div class="bar"></div>
+                </div>
                 <ul class="nav-links">
                     <div class="nav-links__pages-wrapper">
                         <div class="nav-links__pages">
                             <li>
                                 <a href="#">Product</a>
-                            </li>
-                            <li>
-                                <a href="#">Templates</a>
                             </li>
                             <li>
                                 <a href="#">About Us</a>
@@ -53,12 +54,40 @@
             </nav>
         </header>
 
+        <!-- Mobile Menu -->
+        <nav class="mobile-nav__container">
+            <ul class="mobile-nav__list-container">
+                <div class="mobile-nav__list-items">
+                    <li>
+                        <a href="#">Product</a>
+                    </li>
+                    <li>
+                        <a href="#">About Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Contact Us</a>
+                    </li>
+                    <li>
+                        <a href="#">Docs</a>
+                    </li>
+                </div>
+                <div class="mobile-nav__authentication-btns">
+                    <li>
+                        <a href="#">Sign In</a>
+                    </li>
+                    <li>
+                        <a href="#">Sign Up</a>
+                    </li>
+                </div>
+            </ul>
+        </nav>
+
     <!-- Hero-Section -->
         <section class="hero-section">
             <div class="hero-section__body">
                 <div class="hero-section__content">
                     <h3 class="hero-section__header">
-                        Whatever Legal Document you need? Your Termbuddy has got it!
+                        Worried about T&Cs or Privacy Policies? Termbuddy has got you!
                     </h3>
                     <p>
                         We help users create their Terms and Conditions and Privacy Policy documents
@@ -70,7 +99,7 @@
                     </div>
                 </div>
                 <figure class="hero-section__image">
-                    <img src="images/hero_image.svg" alt="hero-image" width="750px">
+                    <img src="images/hero-image.svg" alt="hero-image" width="800px">
                 </figure>
             </div>
         </section>
@@ -105,10 +134,9 @@
                                     Export, download, share and embed links with ease
                                 </h3>
                                 <p>
-                                    With Termbuddy, exporting, downlaoding, sharing and embedding
-                                    of your terms & conditions and your privacy policy documents can 
+                                    With Termbuddy, exporting, sharing, downlaoding, and embedding
+                                    your terms & conditions and your privacy policy documents can 
                                     be done quickly from wherever you are. 
-                                    Download them  to whatever device your want with the click of a single button
                                 </p>
                                 <button class="features-section__btns">Get started 
                                     <span>
@@ -123,7 +151,7 @@
                 <div class="features-section__card second-row">
                     <div class="features-section__card-body">
                         <figure class="features-section__card-image">
-                            <img src="images/autosave-feature-icon.svg" alt="">
+                            <img src="images/autosave-feature-icon.svg" alt="" width="320px">
                         </figure>
                         <div class="features-section__card-content-wrapper">
                             <div class="features-section__card-content">
@@ -403,6 +431,8 @@
                         Subscribe to our newsletter to get important and 
                         industry leading updates to keep your T&Cs and Privacy Policy documents up to date
                     </p>
+
+            <!-- Add Form wrapper -->
                     <div class="input-field">
                         <input type="text" placeholder="johndoe@gmail.com">
                         <span class="email-icon">
@@ -445,12 +475,14 @@
     
                         <div class="footer-section__product">
                             <h3 class="footer-section__header">Product</h3>
-                            <p>
-                                <a href="#">Privacy Policy Generator</a>
-                            </p>
-                            <p>
-                                <a href="#">T&C's Generator</a>
-                            </p>
+                            <div class="paragraph-wrapper">
+                                <p>
+                                    <a href="#">Privacy Policy Generator</a>
+                                </p>
+                                <p>
+                                    <a href="#">T&C's Generator</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
     
@@ -466,7 +498,7 @@
                         </div>
     
                         <div class="footer-section__developers">
-                            <h3 class="footer-section__header">Product</h3>
+                            <h3 class="footer-section__header">Developers</h3>
                             <p>
                                 <a href="#">Forum</a>
                             </p>
