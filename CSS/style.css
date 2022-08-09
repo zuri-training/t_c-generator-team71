@@ -262,6 +262,14 @@ ul.nav-links li {
     width: 45%;
 }
 
+.features-section__card-image .export_img {
+    width: 550px; 
+}
+
+.features-section__card-image .autosave_img {
+    width: none;
+}
+
 .features-section__card-image img {
     max-width: 100%;
     height: auto;
@@ -533,6 +541,7 @@ ul.nav-links li {
 
 .cta-section__content-wrapper .btn {
     background-color: transparent;
+    font-size: 1.05rem;
     padding: 0.75rem;
     border: 1px solid #F5F5F5;
     border-radius: 6px;
@@ -569,6 +578,10 @@ ul.nav-links li {
     width: 40%;
 }
 
+.newsletter-section__image img {
+    width: 450px;
+}
+
 .newsletter-section__form-content {
     width: 55%;
 }
@@ -597,17 +610,18 @@ ul.nav-links li {
 }
 
 .newsletter-section__form-content .input-field input {
-    color: #525252;
+    color: #BABABA;
     width: 100%;
     padding: 1rem 0 1rem 3.5rem;
     border: none;
-    border: 1px solid #525252;
+    border: 1px solid #BABABA;
     border-right: none;
     border-radius: 7px 0 0 7px;
     outline: none;
 }
 
 .newsletter-section__form-content .input-field input::placeholder {
+    color: #BABABA;
     font-size: 1px solid 1.2rem;
 }
 
@@ -776,8 +790,8 @@ ul.nav-links li {
 
     .hero-section__body {
         width: 90%;
-        /* max-width: 1130px; */
-        /* margin-inline: auto; */
+        /* max-width: 480px; */
+        margin-inline: auto;
         text-align: center;
     }
 
@@ -796,6 +810,7 @@ ul.nav-links li {
 
     .hero-btns__container {
         width: 100%;
+        max-width: 400px;
     }
 
     /* Client-section */
@@ -806,7 +821,7 @@ ul.nav-links li {
     }
 
     .client-section__card-wrapper {
-        width: 72%;
+        width: 100%;
         justify-content: center;
         flex-wrap: wrap;
         /* max-width: 1100px; */
@@ -827,6 +842,7 @@ ul.nav-links li {
 
     .features-section__card-wrapper {
         width: 92%;
+        margin-inline: auto;
     }
 
     .features-section__card {
@@ -838,11 +854,20 @@ ul.nav-links li {
     .features-section__card-body {
         flex-wrap: wrap;
         width: 97%;
+        margin-inline: auto;
         text-align: center;
     }
 
     .features-section__card-image {
         width: 100%;
+    }
+
+    .features-section__card-image .export_img {
+        width: 400px;
+    }
+
+    .features-section__card-image .autosave_img {
+        width: 300px;
     }
 
     .features-section__card-content-wrapper {
@@ -851,7 +876,9 @@ ul.nav-links li {
     }
 
     .features-section__card-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        width: 95%;
+        margin-inline: auto;
     }
 
     .features-section__card-content p {
@@ -873,11 +900,12 @@ ul.nav-links li {
         order: 0;
     }
 
+
+    /* Partners section */
+
     .partners-section {
         padding: 2rem 0 5rem 0;
     }
-
-    /* Partners section */
 
     .partners-section__header, 
     .testimonial-section__header, 
@@ -903,13 +931,9 @@ ul.nav-links li {
 
     /* Testimonial Section */
 
-    /* .testimonial-section {
-        display: none;
-    } */
-
     .testimonial-section__card-wrapper {
         flex-wrap: wrap;
-        width: 90%;
+        width: 100%;
         max-width: none;
         max-height: none;
     }
@@ -917,60 +941,67 @@ ul.nav-links li {
     .testimonial-section__card {
         padding: 1rem 0;
         width: 100%;
-        margin: 0 auto 2rem auto;
+        margin: 0 auto 3rem auto;
     }
     
 
     .testimonial-section__card.middle-card {
         position: static;
-        width: 100%;
-        max-width: none;
+        /* min-width: 60%; */
+        /* max-width: 350px; */
         margin-inline: auto;
         padding: 0;
         z-index: 0;
         order: -1;
     }
 
+    .middle-card .testimonial-section__card-image {
+        width: 55px;
+        margin-inline: auto;
+    }
+
+    .middle-card .testimonial-section__card-content {
+        color: #FFFFFF;  
+        width: 95%;    
+        min-width: 60%;  
+        max-width: 350px;  /*to be adjusted*/
+        position: static;
+        padding: 2rem 0;
+        border-radius: 9px;
+    }
+
     .testimonial-section__card-content {
-        /* border: 1px solid green; */
         width: 100%;
         max-width: 1200px;
         padding: 1rem 0;
         margin-inline: auto;
     }
 
-    .middle-card .testimonial-section__card-content {
-        color: #FFFFFF;
-        width: 100%;        
-        max-width: 1400px;  /*to be adjusted*/
-        position: static;
-        padding: 2rem 0;
-        border-radius: 9px;
-    }
-
     .testimonial-section .left-card, .testimonial-section .right-card {
-        width: 100%;
-        max-width: none;
+        min-width: 60%;
+        max-width: 350px;
         max-height: none;
+        border-radius: 9px;
     }
 
     .testimonial-section .left-card h3, .testimonial-section .right-card h3 {
         font-size: 1.2rem;
     }
 
-    .testimonial-section .left-card p, .testimonial-section .right-card p {
+    .testimonial-section .left-card p, .testimonial-section .middle-card p, .testimonial-section .right-card p {
         font-size: 0.8rem;
     }
 
     .testimonial-section .left-card .about, .testimonial-section .middle-card .about, .testimonial-section .right-card .about {
         font-size: 0.9rem;
-        width: 95%;
+        width: 94%;
         padding: 1.3rem 0;
         margin-inline: auto;
+        line-height: 1.6;
     }
 
     .left-card .rating span, .middle-card .rating span, .right-card .rating span {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     /* FAQs Section */
@@ -1045,6 +1076,10 @@ ul.nav-links li {
 
     /* CTA Section */
 
+    .cta-section {
+        display: none;
+    }
+
     .cta-section__content-wrapper {
         text-align: center;
         width: 93%;
@@ -1062,20 +1097,93 @@ ul.nav-links li {
         max-width: 310px;
     }
 
-    /* .newsletter-section {
-        display: none;
-    } */
+    /* Newsletter Section */
+
+    .newsletter-section__body {
+        flex-wrap: wrap;
+        width: 90%;
+        max-width: 1100px;
+        margin-inline: auto;
+    }
+
+    .newsletter-section__image {
+        width: 100%;
+        text-align: center;
+    }
+
+    .newsletter-section__image img {
+        width: 330px;
+    }
+
+    .newsletter-section__form-content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .newsletter-section__form-content p {
+        font-size: 0.95rem;
+        /* width: 95%; */
+        padding: 4rem 0 2rem 0;
+        margin-inline: auto;
+        line-height: 1.6;
+    }
+
+    .newsletter-section__form-content .input-field {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;    
+        position: relative;
+        padding-top: 2rem;
+    }
+
+    .newsletter-section__form-content .input-field .email-icon {
+        position: absolute;
+        /* bottom: 10%; */
+        top: 28%;
+        left: 3%;
+    }
+    
+    .newsletter-section__form-content .input-field .email-icon img {
+        width: 100%;
+    }
+
+    .newsletter-section__form-content .input-field input {
+        color: #BABABA;
+        font-size: 1rem;
+        border: none;
+        border: 1px solid #BABABA;
+        /* border-right: none; */
+        border-radius: 7px;
+    }
+
+    .newsletter-section__form-content .input-field input::placeholder {
+        color: #BABABA;
+        font-size: 1rem;
+    }
+
+    .newsletter-section__form-content .input-field .subscribe-btn-container {
+        padding-top: 2rem;
+        width: 100%;
+    }
+
+    .newsletter-section__form-content .input-field .subscribe-btn {
+        background-color: #2B7A78;
+        color: #FEFEFE;
+        font-size: 1rem;
+        width: 100%;
+        border: 1px solid #2B7A78;
+        border-radius: 7px;
+    }
 
     /* Footer Section */
 
     .footer-section {
-        /* display: none; */
         padding: 3rem 0;
     }
 
     .footer-section__content-wrapper {
         color: #F5F5F5;
-        width: 93%;
+        width: 90%;
         max-width: 1400px;
         margin-inline: auto;
     }
@@ -1161,25 +1269,5 @@ ul.nav-links li {
         font-weight: 700;
     }
 
-
-
-
-
-
-
-    /* 
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-    
-    */
 }
 
