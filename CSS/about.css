@@ -1,0 +1,213 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  font-family: "Mulish", sans-serif;
+}
+
+body {
+  background-color: #f5f5f5;
+  padding: 2rem 0.5rem;
+}
+
+.about-us {
+  text-align: center;
+  width: 343px;
+  border-radius: 16px;
+  padding: 1rem;
+  margin: auto;
+}
+
+.about-us h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 36px;
+  color: #101828;
+  padding: 0.5rem 0;
+}
+
+.about-us p {
+  width: 312px;
+  font-weight: 400;
+  font-size: .875rem;
+  line-height: 24px;
+  color: #525252;
+}
+
+.about-us a {
+  font-weight: 900;
+  color: #2b7a78;
+}
+
+.mission {
+  width: 343px;
+  margin: auto;
+  padding: 1rem 1.5rem;
+  border-radius: 16px;
+  background-color: #f5f5f5;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1), -2px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mission-img {
+  width: 250px;
+  height: 235.49px;
+  margin: auto;
+}
+
+.mission-img > img {
+  width: 100%;
+  height: 100%;
+}
+
+.mission-statement {
+  width: 312px;
+  padding: 2rem 0 0 0;
+}
+
+.mission-statement h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 36px;
+  color: #1f1f1f;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.mission-statement p {
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 24px;
+  color: #2f2f2f;
+  padding-bottom: 1.2rem;
+  margin: auto;
+}
+
+.btn {
+  width: 50%;
+  margin: auto;
+}
+
+.mission-statement button {
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  border: 1px solid #2b7a78;
+  cursor: pointer;
+}
+
+.mission-statement a {
+  color: #2b7a78;
+  font-size: 1rem;
+  font-weight: 600;
+  display: block;
+}
+
+.vission {
+  margin-top: 3rem;
+}
+
+.vission-img {
+  height: 248.1px;
+}
+
+/* MEDIA QUERIES AND RESPONSIVENESS */
+
+@media screen and (min-width: 800px) {
+  .about-us {
+    text-align: center;
+    width: 550px;
+    padding: 1rem;
+    margin: auto;
+  }
+
+  .about-us h1 {
+    font-size: 3.5rem;
+    line-height: 80px;
+    padding: 0.5rem 0;
+  }
+
+  .about-us p {
+    width: 550px;
+    font-size: 1.25rem;
+    line-height: 32px;
+  }
+
+  .mission {
+    min-width: 780px;
+    display: flex;
+    justify-content: space-between;
+    margin: 3.5rem auto;
+    align-items: center;
+  }
+
+  .mission-img {
+    width: 280.51px;
+    height: 342.4px;
+    margin: 0;
+  }
+
+  .mission-statement {
+    width: 350px;
+    margin: 0;
+  }
+
+  .mission-statement h2 {
+    font-size: 2.5rem;
+    line-height: 48px;
+    text-align: left;
+  }
+
+  .mission-statement p {
+    font-size: 1rem;
+    padding-bottom: 2rem;
+  }
+
+  .btn {
+    margin: 0;
+  }
+
+  .vission-img {
+    width: 300px;
+    height: 357.26px;
+    order: 1;
+  }
+
+  .vission-statement {
+    width: 360px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    min-width: 1280px;
+  }
+  .about-us {
+    width: 1024px;
+    margin: auto;
+  }
+
+  .about-us p {
+    width: 1024px;
+  }
+
+  .mission {
+    width: 1044px;
+    padding: 3rem;
+  }
+
+  .mission-img {
+    width: 363.51px;
+  }
+
+  .mission-statement {
+    width: 478px;
+  }
+
+  .vission-img {
+    width: 360px;
+  }
+
+  .vission-statement {
+    width: 468px;
+  }
+}
