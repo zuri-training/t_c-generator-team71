@@ -1,17 +1,35 @@
-
 # Project Team 71
 Codebase for proj-t_c-generator - Team 71
 <br>
 
 # Termbuddy - Terms and Conditions and Privacy Policy Generator.
+
+## Table of Content
+
+* [Overview](#overview)
+* [Project Design](#project-design)
+* [Directory Structure](#directory-structure)
+* [Project Status](#project-status)
+* [Tools Used](#tools-used)
+* [Client](#client)
+* [Features and Accessibilities](#features-and-accessibilities)
+* [Collaboration](#collaboration)
+
 # Overview
 > The purpose of this project is to build a web application that helps users to generate their Terms and Conditions and Privacy Policy agreements for their company or website. 
 
+### Project Design
+> <a href="https://bit.ly/3Q2pn1C">Termbuddy__Team71</a>
 
 
 ### Directory Structure
-- ***Frontend:*** The Frontend code is found in the `Frontend` directory.
-- ***Backend:*** The Backend code is found in the `Backend` directory.
+- ***Frontend:*** The Frontend code is found in this repository.
+- ***Backend:*** The Backend code is found in the <a href="https://github.com/zuri-training/t_c-generator_team71_BE">Backend</a> repository.
+
+
+### Project Status
+> In Progress
+
 
 ### Tools Used
 - JavaScript | CSS3 | HTML5 | Git | GitHub
@@ -25,7 +43,22 @@ Codebase for proj-t_c-generator - Team 71
 - Large Corporations
 
 ### Features and Accessibilities
-#### Unauthenticated User 
+
+#### Unauthenticated User - Feature Requests
+- Visit the platform to view basic information about it.
+- View and interact with the documentation.
+- Register to view more details.
+- No access to use until registered
+
+#### Authenticated User - Feature Requests
+- Full access to the platform
+- Allow users enter basic information
+- Generate selected files with the right data and information
+- Allow export, download, share and website embed
+- Allow user save data and come back to download
+
+
+#### Unauthenticated User - Accessibilities on Termbuddy
 The Unauthenticated User has access to: <br />
 - Landing Page
     - Header (consists of Products, Templates, About Us, Contact Us, Docs, Sign Up button, Sign In button)
@@ -34,7 +67,7 @@ The Unauthenticated User has access to: <br />
 - The Contact Us Page
 - The Docs Page (User Documentation) <br /><br />
 
-#### Authenticated User
+#### Authenticated User - Accessibilities on Termbuddy
 The Authenticated User has access to: <br />
 - The Dashboard
 - Generate a Terms and Conditions agreement
@@ -43,7 +76,7 @@ The Authenticated User has access to: <br />
 - Have their data saved and come back to continue from where they left
 - Preview the agreement before generating it
 - Edit the agreement before generating it
-- Export, share and embed the agreement onto their website 
+- Export, share, download and embed the agreement onto their website 
 
 ### Collaboration
 1. Fork this repository <br />
@@ -126,7 +159,3 @@ If the base branch is set to `master`, click the dropdown beside it and select `
 15. Once that is done, Click on the `Create Pull Request`
 
 16. ***DO NOT MERGE YOUR PULL REQUEST!***
-
-
-
-
