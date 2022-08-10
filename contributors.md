@@ -1,1 +1,0 @@
-# Team 71 Contributors to the Termbuddy Project
