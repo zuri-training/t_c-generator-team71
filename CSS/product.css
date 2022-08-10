@@ -84,6 +84,8 @@ p{
     font-size:var(--section-size-two);
     margin: 20px 0;
 }
+
+.section
 .section_con{
     display: flex;
     flex-direction: column;
@@ -102,6 +104,10 @@ p{
     padding: 16px 24px;
     box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
     border-radius: 16px;
+}
+
+.section:first-child {
+    box-shadow: none;
 }
 .section_info{
     display: flex;
