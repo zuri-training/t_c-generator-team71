@@ -321,6 +321,7 @@ ul.nav-links li {
 .partners-section__header, 
 .testimonial-section__header, 
 .FAQs-section__header, 
+.HIW-section__header,
 .cta-section__header, 
 .newsletter-section__header {
     font-size: 2rem;
@@ -507,6 +508,83 @@ ul.nav-links li {
     letter-spacing: 0.02rem;
     line-height: 1.8;
 }
+
+/* HOW IT WORKS SECTION */
+
+.HIW-section__card-wrapper {
+    width: 80%;
+    padding: 2rem 0 2rem 0;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.HIW-section__card-parent {
+    /* border: 1px solid red; */
+    width: 50%;
+    /* min-width: 550px; */
+    padding-bottom: 3rem;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+}
+
+.HIW-section__card {
+    border: 1px solid lightgrey;
+    width: 49%;
+    padding: 2rem 0;
+    margin: 1rem 0;
+    border-radius: 10px;
+    position: relative;
+}
+
+.number-wrapper {
+    /* border: 1px solid red; */
+    text-align: center;
+    position: absolute;
+    width: 20%;
+    min-width: 55px;
+    max-width: 55px;
+    top: -1.8rem;
+    left: 40%;
+}
+
+.number-wrapper span {
+    background-color: white;
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 100%;
+    padding: 0.4rem 0.65rem;
+    box-shadow: 0 0 1px 5px black, 0 0 1px 12px white;
+    border-radius: 100%;
+
+}
+
+.HIW-section__card-image {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.HIW-section__card-content {
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.HIW-section__card-content-header {
+    color: #2B7A78;
+    font-size: 1.25rem;  
+}
+ 
+.HIW-section__card-content p {
+    padding: 1.5rem 0 1.8rem 0;
+    line-height: 1.5;
+}
+
+
+/* CTA SECTION */
 
 .cta-section {
     background-color: #1D5150;
