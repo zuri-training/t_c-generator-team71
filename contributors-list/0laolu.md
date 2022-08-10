@@ -19,3 +19,6 @@ https://github.com/zuri-training/t_c-generator-team71/issues/6
 
 ### Add the How It Works Section to the Landing Page
 https://github.com/zuri-training/t_c-generator-team71/issues/100
+
+### Push the Landing page from your branch to the Develop branch of the project repo
+https://github.com/zuri-training/t_c-generator-team71/issues/87
