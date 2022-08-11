@@ -12,11 +12,11 @@ navToggle.addEventListener('click', ()=>{
     if(currentToggle){
         navToggle.getAttribute('src')
         navToggle.removeAttribute('src')
-        navToggle.setAttribute('src', 'img/menu_close.svg')
+        navToggle.setAttribute('src', 'images/menu_close.svg')
     }else{
         navToggle.getAttribute('src')
         navToggle.removeAttribute('src')
-        navToggle.setAttribute('src', 'img/menu_open.svg')
+        navToggle.setAttribute('src', 'images/menu_open.svg')
     }
     currentToggle=!currentToggle
 })
