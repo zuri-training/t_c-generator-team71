@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./CSS/contact.css">
+</head>
+<body>
+    <header class="primary-header">
+        <nav class="nav-bar">
+            <div class="logo">
+                <span><a href="./index.html">Termbuddy</a></span>
+            </div>
+
+        <!-- Hamburger Section for Mobile -->
+            <div class="hamburger__wrapper">
+                <div class="bar"></div>
+            </div>
+        <!-- Navigation Links Section for Desktop -->
+            <ul class="nav-links">
+                <div class="nav-links__pages-wrapper">
+                    <div class="nav-links__pages">
+                        <li>
+                            <a href="./product.html">Product</a>
+                        </li>
+                        <li>
+                            <a href="./about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="#">Docs</a>
+                        </li>
+                    </div>
+                </div>
+                <div class="nav-links__authentication-wrapper">
+                    <div class="nav-links__authentication">
+                        <li class="sign-in">
+                            <a href="#">Sign In</a>
+                        </li>
+                        <li class="sign-up">
+                            <a href="/Frontend/signUp.html">Sign Up</a>
+                        </li>
+                    </div>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav class="mobile-nav__container">
+        <ul class="mobile-nav__list-container">
+            <div class="mobile-nav__list-items">
+                <li>
+                    <a href="./product.html">Product</a>
+                </li>
+                <li>
+                    <a href="./about.html">About Us</a>
+                </li>
+                <li>
+                    <a href="./contact.html">Contact Us</a>
+                </li>
+                <li>
+                    <a href="#">Docs</a>
+                </li>
+            </div>
+            <div class="mobile-nav__authentication-btns">
+                <li class="sign-in btn">
+                    <a href="#">Sign In</a>
+                </li>
+                <li class="sign-up btn">
+                    <a href="#">Sign Up</a>
+                </li>
+            </div>
+        </ul>
+    </nav>
+    <div id="overlay"></div>
+    <main>
+    <div class="contact-us">
+        <h1>Contact Us</h1>
+        <p>Need help? Reach out to us by filling this form and we will get in touch shortly.</p>
+    </div>
+    <div class="contact-form">
+        <div class="contact-form-img">
+            <img src="images/customer-care-lady.svg" alt="Contact us">
+        </div>
+        <form action="" class="form">
+            <div class="full-name icons">
+                <label for="Full Name">Full Name</label>
+                <img src="images/user.svg" alt="person icon">
+                <input type="text" name="Full Name" id="Full Name" placeholder="John Doe">
+            </div>
+            <div class="email icons">
+                <label for="Email">Email</label>
+                <img src="images/sms2.svg" alt="message icon">
+                <input type="email" name="email" id="Email" placeholder="Johndoe@gmail.com">
+            </div>
+            <div class="message">
+                <label for="Message">Message</label>
+                <textarea name="" id="Message" cols="30" rows="10" placeholder="Enter your message"></textarea>
+            </div>
+            <div class="form-button">
+                <button class="form-btn">Send</button>
+            </div>
+        </form>
+    </div>
+    <div class="contact-details">
+        <div  class="contact-detail">
+            <div class="contact-detail-img">
+                <img src="images/home-2.svg" alt="office icon ">
+            </div>
+            <div class="contact-info">
+                <h2>Visiting Hours</h2>
+                <p>Mon-Thur: 8:00am - 4:00pm</p>
+                <p>Fri: 8:00am - 1:30pm</p>
+            </div>
+            <a href="#">41, Ashley close, Festac Town, Lagos.</a>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-detail-img">
+                <img src="images/call.svg" alt="call us icon">
+            </div class>
+            <div class="contact-info">
+                <h2>Call Us</h2>
+                <p> You can call us anytime, anyday</p>
+            </div>
+            <a href="#"> +234 813 556 7894 </a>
+        </div>
+        <div class="contact-detail">
+            <div class="contact-detail-img">
+                <img src="images/sms-green.svg" alt="email us icon">
+            </div>
+            <div class="contact-info">
+                <h2>Email Us</h2>
+                <p>You can send us an email anytime, anyday</p>
+            </div>
+            <a href="#">help@termbuddy.io</a>
+        </div>
+    </div>
+    <div class="social-media">
+        <h3>Follow Us</h3>
+        <div class="social-media-icons">
+            <a href=""> <img src="images/twitter-contact.svg" alt="twitter icon"></a>
+            <a href=""><img src="images/facebook-contact.svg" alt="facebook icon"></a>
+            <a href=""><img src="images/instagram-contact.svg" alt="instagram icon"></a>
+            <a href=""><img src="images/linkedin-contact.svg" alt="linkedin icon" class="linkedin"></a>
+            
+        </div>
+    </div>
+</main>
+<footer class="footer-section">
+    <div class="footer-section__content-wrapper">
+
+        <div class="footer-section__top-footer">
+            <div class="footer-section__left-column box">
+                <div class="footer-section__logo">Termbuddy</div>
+                <figure class="footer-section__social-media">
+                    <img src="images/linkedin-icon.svg" alt="">
+                    <img src="images/facebook-icon.png" alt="">
+                    <img src="images/instagram-icon.png" alt="">
+                    <img src="images/twitter-icon.png" alt="">
+                </figure>
+            </div>
+
+            <div class="footer-section__middle-column box">
+                <div class="footer-section__company">
+                    <h3 class="footer-section__header">Company</h3>
+                    <p>
+                        <a href="#">About Us</a>
+                    </p>
+                    <p>
+                        <a href="#">Contact Us</a>
+                    </p>
+                </div>
+
+                <div class="footer-section__product">
+                    <h3 class="footer-section__header">Product</h3>
+                    <p>
+                        <a href="#">Privacy Policy Generator</a>
+                    </p>
+                    <p>
+                        <a href="#">T&C's Generator</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-section__right-column box">
+                <div class="footer-section__resources">
+                    <h3 class="footer-section__header">Resources</h3>
+                    <p>
+                        <a href="#">Templates</a>
+                    </p>
+                    <p>
+                        <a href="#">Docs</a>
+                    </p>
+                </div>
+
+                <div class="footer-section__developers">
+                    <h3 class="footer-section__header">Developers</h3>
+                    <p>
+                        <a href="#">Forum</a>
+                    </p>
+                    <p>
+                        <a href="#">Projects</a>
+                    </p>
+                    <p>
+                        <a href="#">Partnerships</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-section__bottom-footer">
+            <div class="footer-section__copyright">
+                <p>&#169 2022 Termbuddy Services. All Rights Reserved</p>
+            </div>
+            <div class="footer-section__agreements">
+                <p>
+                    <a href="#">Privacy Policy</a>
+                </p>
+                <p>
+                    <a href="#">Terms and Conditions</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</footer>
+
+<script src="./JS/contact.js"></script>
+</body>
+</html>
