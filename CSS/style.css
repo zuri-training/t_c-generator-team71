@@ -453,7 +453,7 @@ ul.nav-links li {
 
 .FAQs-section {
     background-color: #F5F5F5;
-    padding: 5rem 0 0 0;
+    padding: 5rem 0;
 }
 
 .FAQs-section__dropdown-container {
@@ -482,6 +482,7 @@ ul.nav-links li {
 
 .FAQs-section__select img {
     transition: 0.4s;
+    cursor: pointer;
 }
 
 .FAQs-section__select img.active {
@@ -514,9 +515,14 @@ ul.nav-links li {
 
 /* HOW IT WORKS SECTION */
 
+.HIW-section {
+    padding: 7rem 0;
+}
+
 .HIW-section__card-wrapper {
     width: 80%;
     padding: 2rem 0 2rem 0;
+    /* margin: 7rem auto 4rem auto; */
     margin: 0 auto;
     display: flex;
     justify-content: center;

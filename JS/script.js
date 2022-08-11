@@ -1,15 +1,77 @@
-const selectEl = document.querySelector('.FAQs-section__select')
-const arrowIcons = document.querySelector('.FAQs-section__select img')
-const answersDropdown = document.querySelector('.FAQs-section__answer-dropdown')
+const selectEl01 = document.getElementById('FAQ-select01')
+const arrowIcon01 = document.querySelector('.img01')
+const answerDropdown01 = document.getElementById('answer-dropdown01')
+
+const selectEl02 = document.getElementById('FAQ-select02')
+const arrowIcon02 = document.querySelector('.img02')
+const answerDropdown02 = document.getElementById('answer-dropdown02')
+
+const selectEl03 = document.getElementById('FAQ-select03')
+const arrowIcon03 = document.querySelector('.img03')
+const answerDropdown03 = document.getElementById('answer-dropdown03')
+
+const selectEl04 = document.getElementById('FAQ-select04')
+const arrowIcon04 = document.querySelector('.img04')
+const answerDropdown04 = document.getElementById('answer-dropdown04')
+
+const selectEl05 = document.getElementById('FAQ-select05')
+const arrowIcon05 = document.querySelector('.img05')
+const answerDropdown05 = document.getElementById('answer-dropdown05')
+
+const selectEl06 = document.getElementById('FAQ-select06')
+const arrowIcon06 = document.querySelector('.img06')
+const answerDropdown06 = document.getElementById('answer-dropdown06')
 
 
-arrowIcons.onclick = displayAnswer;
 
-function displayAnswer() {
-    selectEl.classList.toggle('active')
-    answersDropdown.classList.toggle('active')
-    arrowIcons.classList.toggle('active')
+arrowIcon01.onclick = displayAnswer01;
+
+function displayAnswer01() {
+    selectEl01.classList.toggle('active')
+    answerDropdown01.classList.toggle('active')
+    arrowIcon01.classList.toggle('active')
 }
+
+arrowIcon02.onclick = displayAnswer02;
+
+function displayAnswer02() {
+    selectEl02.classList.toggle('active')
+    answerDropdown02.classList.toggle('active')
+    arrowIcon02.classList.toggle('active')
+}
+
+arrowIcon03.onclick = displayAnswer03;
+
+function displayAnswer03() {
+    selectEl03.classList.toggle('active')
+    answerDropdown03.classList.toggle('active')
+    arrowIcon03.classList.toggle('active')
+}
+
+arrowIcon04.onclick = displayAnswer04;
+
+function displayAnswer04() {
+    selectEl04.classList.toggle('active')
+    answerDropdown04.classList.toggle('active')
+    arrowIcon04.classList.toggle('active')
+}
+
+arrowIcon05.onclick = displayAnswer05;
+
+function displayAnswer05() {
+    selectEl05.classList.toggle('active')
+    answerDropdown05.classList.toggle('active')
+    arrowIcon05.classList.toggle('active')
+}
+
+arrowIcon06.onclick = displayAnswer06;
+
+function displayAnswer06() {
+    selectEl06.classList.toggle('active')
+    answerDropdown06.classList.toggle('active')
+    arrowIcon06.classList.toggle('active')
+}
+
 
 
 
