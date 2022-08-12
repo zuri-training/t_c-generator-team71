@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./CSS/forgot.css">
+    <title>Forgot Password | TermBuddy</title>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <div class="flex">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="./images/logo.svg" alt="Logo">
+                    </a>
+                </div>
+                <div>
+                    <a href="signUp.html"><button>Sign Up</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section>
+            <div class="main-container">
+                <div class="forgot-img">
+                    <img src="./images/forgot.svg" alt="an illustration of a woman trying to remember something">
+                </div>
+                <div class="form-wrapper">
+                    <div class="form-text">
+                        <h2>Forgot Password</h2>
+                        <p>Enter your email and we will send you a link to
+                            reset your password.</p>
+                    </div>
+                    <form action="" id="form">
+                        <label for="email">Email
+                            <img class="input-email" src="./images/email.svg" alt="an icon of an envelop">
+                        </label>
+                        <input type="email" name="email" id="email" placeholder="johndoe@gmail.com">
+                        <p class="error-message incorrect">
+                            <span class="error-icon">
+                                <img src="./images/x-icon.svg" alt="an x icon">
+                            </span>
+                            <span class="error-text incorrect-text">
+                                Provide a valid email address
+                            </span>
+                        </p>
+                        <input type="submit" value="Send Link">
+                    </form>
+                    <a class="login-link" href="login.html">Back to Login</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="./JS/forgot.js"></script>
+</body>
+
+</html>

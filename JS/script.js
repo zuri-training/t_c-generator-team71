@@ -94,3 +94,26 @@ menuBarOverlay.addEventListener('click', function() {
     menuBar.classList.remove('slide-out')
     menuBarOverlay.classList.remove('active')
 })
+
+
+// newsletter section
+
+const form = document.querySelector('form')
+form.addEventListener('submit', (e) => {
+    e.preventDefault
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    console.log(data);
+
+    fetch('https://termsbuddy.herokuapp.com/api/users/newsletter/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    }).then(res => { console.log(res);
+        return res.json
+    }).then(data => {console.log(data)}).catch(error => console.log(error));
+})
+
+

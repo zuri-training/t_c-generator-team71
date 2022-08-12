@@ -45,10 +45,10 @@
                     <div class="nav-links__authentication-wrapper">
                         <div class="nav-links__authentication">
                             <li class="sign-in">
-                                <a href="#">Sign In</a>
+                                <a href="./login.html">Sign In</a>
                             </li>
                             <li class="sign-up">
-                                <a href="/Frontend/signUp.html">Sign Up</a>
+                                <a href="./signUp.html">Sign Up</a>
                             </li>
                         </div>
                     </div>
@@ -75,10 +75,10 @@
                 </div>
                 <div class="mobile-nav__authentication-btns">
                     <li class="sign-in btn">
-                        <a href="#">Sign In</a>
+                        <a href="./login.html">Sign In</a>
                     </li>
                     <li class="sign-up btn">
-                        <a href="#">Sign Up</a>
+                        <a href="./signUp.html">Sign Up</a>
                     </li>
                 </div>
             </ul>
@@ -97,8 +97,12 @@
                         for their websites, mobile apps, businesses, third party services and many more with ease.
                     </p>
                     <div class="hero-btns__container">
-                        <button type="button" class="hero-btn learn-more">Learn More</button>
-                        <button type="button" class="hero-btn get-started">Get Started</button>
+                        <button type="button" class="hero-btn learn-more">
+                            <a href="./docs.html" style="color: #2B7A78;">Learn More</a>
+                        </button>
+                        <button type="button" class="hero-btn get-started">
+                            <a href="./signUp.html" style="color: #F5F5F5;">Get Started</a>
+                        </button>
                     </div>
                 </div>
                 <figure class="hero-section__image">
@@ -142,7 +146,7 @@
                                     be done quickly from wherever you are.
                                 </p>
                                 <button class="features-section__btns">
-                                    <a href="">Get started 
+                                    <a href="./signUp.html">Get started 
                                         <span>
                                             <img src="images/arrow-right.svg" alt="">
                                         </span>
@@ -168,7 +172,7 @@
                                     so you’re never at a loss.
                                 </p>
                                 <button class="features-section__btns">
-                                    <a href="">Get started 
+                                    <a href="./signUp.html">Get started 
                                         <span>
                                             <img src="images/arrow-right.svg" alt="">
                                         </span>
@@ -194,7 +198,7 @@
                                     The template can also be modified and reused.
                                 </p>
                                 <button class="features-section__btns">
-                                    <a href="">Get started 
+                                    <a href="./signUp.html">Get started 
                                         <span>
                                             <img src="images/arrow-right.svg" alt="">
                                         </span>
@@ -503,7 +507,9 @@
                 <p>Our dashboard is waiting for you to generate your Terms and Conditions and Privacy Policy documents</p>
                 <div class="btn-container">
                     <!-- <button class="sign-in btn">Sign In</button> -->
-                    <button class="get-started btn">Get Started</button>
+                    <button class="get-started btn">
+                        <a href="./signUp.html" style="color: #2B7A78;">Get Started</a>
+                    </button>
                 </div>
             </div>
         </section>
@@ -522,15 +528,17 @@
                         industry leading updates to keep your T&Cs and Privacy Policy documents up to date
                     </p>
         <!-- Add Form wrapper -->
-                    <div class="input-field">
-                        <input type="text" placeholder="johndoe@gmail.com">
-                        <span class="email-icon">
-                            <img src="images/email.svg" alt="">
-                        </span>
-                        <div class="subscribe-btn-container">
-                            <button class="subscribe-btn">Subscribe</button>
+                    <form action="">
+                        <div class="input-field">
+                            <input name="email" type="text" placeholder="johndoe@gmail.com">
+                            <span class="email-icon">
+                                <img src="images/email.svg" alt="">
+                            </span>
+                            <div class="subscribe-btn-container">
+                                <button type="submit" class="subscribe-btn">Subscribe</button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
@@ -616,6 +624,6 @@
             </div>
         </footer>
 
-        <script src="JS/script.js"></script>
+        <script src="./JS/script.js"></script>
     </body>
 </html>

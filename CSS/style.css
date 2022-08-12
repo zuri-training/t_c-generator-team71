@@ -635,6 +635,7 @@ ul.nav-links li {
     background-color: #1D5150;
     color: #F5F5F5;
     width: 46%;
+    min-width: 150px;
     font-size: 1.05rem;
     padding: 0.75rem;
     border: 1px solid #2B7A78;
@@ -698,6 +699,7 @@ ul.nav-links li {
     background-color: #F5F5F5;
     color: #1D5150;
     width: 46%;
+    min-width: 150px;
 }
 
 /* Newsletter Section */
@@ -1501,6 +1503,7 @@ ul.nav-links li {
     .nav-bar {
         width: 80%;
     }
+    
 
     /* .FAQs-section, .newsletter-section, .cta-section {
         display: none;
@@ -1508,6 +1511,16 @@ ul.nav-links li {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1180px) {
+
+    .HIW-section__card-wrapper {
+        justify-content: space-around;
+    }
+
+    .HIW-section__card {
+        width: 70%;
+        max-width: 350px;
+    }
+
     .footer-section__content-wrapper {
         width: 90%;
     }
@@ -1627,6 +1640,10 @@ ul.nav-links li {
     .footer-section__agreements p {
         text-align: center;
     }
+
+}
+
+@media screen and (min-width: 1400px) {
 
 }
 
