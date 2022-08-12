@@ -467,6 +467,10 @@ button {
   margin: 0 auto;
 }
 
+.logo span a {
+  color: #2B7A78;
+}
+
 ul.nav-links {
   display: flex;      /* general */ 
   align-items: center;    /* general */
