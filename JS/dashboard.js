@@ -621,6 +621,22 @@ function docxFormat() {
 function txtFormat() {
     const showExport = document.querySelector('.export-as');
     showExport.classList.toggle('show-export');
+
+    // create an empty array that will contain the content in inner-preview
+    let arrayOfInnerPreviewContent = []
+    // storing the text of inner preview in a variable
+    let innerPreviewContent = document.querySelector('.inner-preview').innerText
+    // pushing the content previewd to the array
+    arrayOfInnerPreviewContent.push(innerPreviewContent)
+    //  converting the array to a string
+    let arrayToString =  arrayOfInnerPreviewContent.toString()
+    // converting the content to a text file
+    let file = new Blob([arrayToString],{type:'text'})
+    // creating a link to download the text file
+    let anchorTag = document.createElement('a')
+        anchorTag.href = URL.createObjectURL(file)
+        anchorTag.download = 'termbuddy.txt'  // name of file to be changed
+        anchorTag.click()
 }
 
 // Exporting as HTML
