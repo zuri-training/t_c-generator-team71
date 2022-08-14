@@ -615,6 +615,30 @@ function handleExport() {
 function docxFormat() {
     const showExport = document.querySelector('.export-as');
     showExport.classList.toggle('show-export');
+
+    // getting the inner-preview container and add an id attribute to it
+    let innerPreview = document.querySelector('.inner-preview');
+    innerPreview.setAttribute('id', 'preview-container')
+    console.log(innerPreview)
+
+    // constructing the source data with the header, body and footer tags
+    let header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+            "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+            "xmlns='http://www.w3.org/TR/REC-html40'>"+
+            "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+    let footer = "</body></html>";
+    let previewContainer = header+document.getElementById('preview-container').innerHTML+footer;
+
+    // encoding previewContainer to form a URL
+    let source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(previewContainer);
+
+    // creating a download link
+    let anchorElement = document.createElement('a');
+    document.body.appendChild(anchorElement);
+    anchorElement.href = source;
+    anchorElement.download = 'termbuddy.doc';
+    anchorElement.click();
+    document.body.removeChild(anchorElement);
 }
 
 // Exporting as TXT
