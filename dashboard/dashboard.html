@@ -8,7 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./CSS/dashboard.css">
+    <link rel="favicon" href="green-square.svg">
+    <link rel="stylesheet" href="dashboard.css">
     <title>TermBuddy | Homepage</title>
 </head>
 
@@ -20,17 +21,14 @@
                     <div class="logo">
                         <div>
                             <button class="close-btn toggler">
-                                <img src="./images/close-square.svg" alt="menu icon">
+                                <img src="close-square.svg" alt="menu icon">
                             </button>
                         </div>
                         <button class="sidebar-expander">
-                            <img src="./images/cirecle-arrow.svg" alt="circled arrow icon">
+                            <img src="cirecle-arrow.svg" alt="circled arrow icon">
                         </button>
-                        <a href="./index.html" class="logo-link">
-                            <span style="font-size: 1.3rem; font-weight: 700;">
-                                <!-- <img src="./images/logo" alt="TermBuddy Logo"> -->
-                                Termbuddy
-                            </span>
+                        <a href="#" class="logo-link">
+                            <span><img src="../images/logo.svg" alt="TermBuddy Logo"></span>
                             <p>TB</p>
                         </a>
                     </div>
@@ -38,30 +36,30 @@
                         <ul>
                             <li>
                                 <a href="#" class="tab-a active-a" data-id="tab1">
-                                    <img src="./images/home.svg" alt="home icon">
+                                    <img src="home.svg" alt="home icon">
                                     <span>dashboard</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="tab-a" data-id="tab2">
-                                    <img src="./images/file.svg" alt="file icon"> <span>T&Cs</span>
+                                    <img src="file.svg" alt="file icon"> <span>T&Cs</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="tab-a" data-id="tab3">
-                                    <img src="./images/policy.svg" alt="file icon"> <span>privacy policy</span>
+                                    <img src="policy.svg" alt="file icon"> <span>privacy policy</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="#" class="tab-a" data-id="tab4">
-                                    <img src="./images/user-dashboard.svg" alt="user icon"> <span>profile</span>
+                                    <img src="user.svg" alt="user icon"> <span>profile</span>
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="logout-btn">
-                    <a href="#" onclick="logOut()"><img src="./images/logout.svg" alt="logout icon"> <span>log out</span></a>
+                    <a href="#" onclick="logOut()"><img src="logout.svg" alt="logout icon"> <span>log out</span></a>
                 </div>
             </div>
         </aside>
@@ -70,14 +68,14 @@
                 <div>
                     <div>
                         <button class="menu-btn toggler">
-                            <img src="./images/menu.svg" alt="menu icon">
+                            <img src="menu.svg" alt="menu icon">
                         </button>
                     </div>
                     <h1 class="heading">Dashboard</h1>
                     <p>Welcome <span class="firstname">!</span></p>
                 </div>
                 <div class="profile-img">
-                    <p class="initials">SA</p>
+                    <p class="initials">JD</p>
                 </div>
             </div>
             <div class="tab-content">
@@ -93,32 +91,22 @@
                     <section class="wrapper preview-cons">
                         <div class="terms">
                             <h2>Drafts</h2>
-                            <div class="terms-wrapper">
+                            <div class="drafts">
                                 <button class="docu-btn docu-primary">
                                     <div>
-                                        <img src="./images/docu-image.png" alt="an image of a document">
+                                        <img src="docu-image.png" alt="an image of a document">
                                     </div>
                                     <div>
                                         <p>
-                                            <img src="./images/edit.svg" alt="a pen icon">Edit
+                                            <img src="edit.svg" alt="a pen icon">Edit
                                         </p>
                                     </div>
                                 </button>
                             </div>
                         </div>
-                        <div class="privacy">
+                        <div class="privacy ">
                             <h2>Terms and Conditions</h2>
-                            <div class="privacy-wrapper terms-wrapper">
-                                <button class="docu-btn docu-primary">
-                                    <div>
-                                        <img src="./images/docu-image.png" alt="an image of a document">
-                                    </div>
-                                    <div>
-                                        <p>
-                                            <img src="./images/eye-dashboard.svg" alt="an eye icon">Preview
-                                        </p>
-                                    </div>
-                                </button>
+                            <div class="terms-wrapper">
                             </div>
                         </div>
                     </section>
@@ -131,14 +119,14 @@
                     <section class="wrapper preview">
                         <div class="terms">
                             <h2>Drafts</h2>
-                            <div class="terms-wrapper">
+                            <div class="drafts">
                                 <button class="docu-btn docu-primary">
                                     <div>
-                                        <img src="./images/docu-image.png" alt="an image of a document">
+                                        <img src="docu-image.png" alt="an image of a document">
                                     </div>
                                     <div>
                                         <p>
-                                            <img src="./images/edit.svg" alt="a pen icon">Edit
+                                            <img src="edit.svg" alt="a pen icon">Edit
                                         </p>
                                     </div>
                                 </button>
@@ -146,17 +134,7 @@
                         </div>
                         <div class="privacy">
                             <h2>Privacy Policy</h2>
-                            <div class="privacy-wrapper terms-wrapper">
-                                <button class="docu-btn docu-primary">
-                                    <div>
-                                        <img src="./images/docu-image.png" alt="an image of a document">
-                                    </div>
-                                    <div>
-                                        <p>
-                                            <img src="./images/eye-dashboard.svg" alt="an eye icon">Preview
-                                        </p>
-                                    </div>
-                                </button>
+                            <div class="privacy-wrapper">
                             </div>
                         </div>
                     </section>
@@ -171,16 +149,16 @@
                             <div class="avatar white shadow">
                                 <div class="first avatar_alt">
                                     <div class="profile-img">
-                                        <p class="initials">SA</p>
+                                        <p class="initials">JD</p>
                                     </div>
-                                    <span class="name alt alt_alt">Ashley Cole</span>
+                                    <span class="name alt alt_alt">John Doe</span>
                                 </div>
                                 <div class="third avatar_alt avatar_alt_alt">
                                     <span class="num-text  alt">Email</span>
                                     <div class="edit-btn">
-                                        <span class="num-figure">Ashleycole@gmail.com</span>
-                                        <button class="edit_btn">
-                                            <img src="./images/edit-2.svg" alt="pen icon">
+                                        <span class="num-figure">johndoe@gmail.com</span>
+                                        <button class="edit_btn" disabled>
+                                            <img src="edit-2.svg" alt="pen icon">
                                             Edit
                                         </button>
                                     </div>
@@ -191,8 +169,8 @@
                                 <span class="num-text  alt">Password</span>
                                 <div class="edit-btn">
                                     <span class="star">**********</span>
-                                    <button class="edit_btn ed_btn">
-                                        <img src="./images/edit-2.svg" alt="pen icon">
+                                    <button class="edit_btn ed_btn" disabled>
+                                        <img src="edit-2.svg" alt="pen icon">
                                         Change Password
                                     </button>
                                 </div>
@@ -201,11 +179,11 @@
                         <div class="right">
                             <div class="draft white white_alt shadow">
                                 <h2>Total Number of Drafts Created</h2>
-                                <p>5</p>
+                                <p>No data</p>
                             </div>
                             <div class="saved white white_alt white_alt_two shadow ">
                                 <h2 class="chop">Total Number of Saved Documents</h2>
-                                <p class="cc">48</p>
+                                <p class="cc">No data</p>
                             </div>
                         </div>
                     </div>
@@ -217,7 +195,7 @@
                 <div class="inner-wrapper">
                     <div class="modal-form-wrapper">
                         <button class="form-cls modal1-btn">
-                            <img src="./images/cls.svg" alt="a close icon">
+                            <img src="cls.svg" alt="a close icon">
                         </button>
                         <div class="progress-bar-wrapper">
                             <div class="progress-bar">
@@ -239,28 +217,28 @@
                                 <small class="required">All input fields are required</small>
                                 <div>
                                     <label for="bizname">Business Name
-                                        <img src="./images/shop.svg" alt="shop icon">
+                                        <img src="shop.svg" alt="shop icon">
                                     </label>
                                     <input type="text" name="business_name" id="bizname" placeholder="John Doe Limited"
                                         required>
                                 </div>
                                 <div>
                                     <label for="url">Website URL
-                                        <img src="./images/global.svg" alt="globe icon">
+                                        <img src="global.svg" alt="globe icon">
                                     </label>
                                     <input type="text" name="business_url" id="url" placeholder="https://johndoe.com" required>
                                     <small>URL format must be https://johndoe.com</small>
                                 </div>
                                 <div>
                                     <label for="email">Email
-                                        <img src="./images/input-email.svg" alt="envelope icon">
+                                        <img src="input-email.svg" alt="envelope icon">
                                     </label>
                                     <input type="email" name="contact_email" id="email" placeholder="johndoe@gmail.com"
                                         required>
                                 </div>
                                 <div>
                                     <label for="phone">Phone
-                                        <img src="./images/call.svg" alt="phone icon">
+                                        <img src="call.svg" alt="phone icon">
                                     </label>
                                     <input type="text" name="contact_phone" id="phone" placeholder="+234 812 657 9745"
                                         required>
@@ -271,7 +249,7 @@
                                 <small class="required">All input fields are required</small>
                                 <div id="docu-name">
                                     <label for="docname">Document Name
-                                        <img src="./images/grey-file.svg" alt="shop icon">
+                                        <img src="grey-file.svg" alt="shop icon">
                                     </label>
                                     <input type="text" name="document_name" id="docname"
                                         placeholder="Awesome name goes here" required>
@@ -303,17 +281,17 @@
                                 </div>
                             </div>
                             <div class="btn-wrapper">
-                                <button class="back switch-form" type="button"><img src="./images/arrow-circle-left.svg"
+                                <button class="back switch-form" type="button"><img src="arrow-circle-left.svg"
                                         alt="right arrow icon">
                                     Back
                                 </button>
                                 <button type="button" class="proceed switch-form te-btn">
                                     Proceed
-                                    <img src="./images/arrow-circle-right.svg" alt="right arrow icon">
+                                    <img src="arrow-circle-right.svg" alt="right arrow icon">
                                 </button>
                                 <button type="submit" class="proceed submit-btn">
                                     Proceed
-                                    <img src="./images/arrow-circle-right.svg" alt="right arrow icon">
+                                    <img src="arrow-circle-right.svg" alt="right arrow icon">
                                 </button>
                             </div>
                         </form>
@@ -326,7 +304,7 @@
                 <div class="inner-wrapper">
                     <div class="modal-form-wrapper">
                         <button class="form-cls modal2-btn">
-                            <img src="./images/cls.svg" alt="a close icon">
+                            <img src="cls.svg" alt="a close icon">
                         </button>
                         <div class="progress-bar-wrapper">
                             <div class="progress-bar">
@@ -348,14 +326,14 @@
                                 <small class="required">All input fields are required</small>
                                 <div>
                                     <label for="mbizname">Business Name
-                                        <img src="./images/shop.svg" alt="shop icon">
+                                        <img src="shop.svg" alt="shop icon">
                                     </label>
                                     <input type="text" name="business_name" id="mbizname"
                                         placeholder="John Doe Limited" required>
                                 </div>
                                 <div>
                                     <label for="murl">Website URL
-                                        <img src="./images/global.svg" alt="globe icon">
+                                        <img src="global.svg" alt="globe icon">
                                     </label>
                                     <input type="text" name="business_url" id="murl" placeholder="https://johndoe.com"
                                         required>
@@ -363,14 +341,14 @@
                                 </div>
                                 <div>
                                     <label for="memail">Email
-                                        <img src="./images/input-email.svg" alt="envelope icon">
+                                        <img src="input-email.svg" alt="envelope icon">
                                     </label>
                                     <input type="email" name="contact_email" id="memail"
                                         placeholder="johndoe@gmail.com" required>
                                 </div>
                                 <div>
                                     <label for="mphone">Phone
-                                        <img src="./images/call.svg" alt="phone icon">
+                                        <img src="call.svg" alt="phone icon">
                                     </label>
                                     <input type="text" name="contact_phone" id="mphone" placeholder="+234 812 657 9745"
                                         required>
@@ -381,7 +359,7 @@
                                 <small class="required">All input fields are required</small>
                                 <div id="docu-name">
                                     <label for="docname">Document Name
-                                        <img src="./images/grey-file.svg" alt="shop icon">
+                                        <img src="grey-file.svg" alt="shop icon">
                                     </label>
                                     <input type="text" name="document_name" id="mdocname"
                                         placeholder="Awesome name goes here" required>
@@ -423,17 +401,17 @@
                                 </div>
                             </div>
                             <div class="btn-wrapper">
-                                <button class="back switch-form" type="button"><img src="./images/arrow-circle-left.svg"
+                                <button class="back switch-form" type="button"><img src="arrow-circle-left.svg"
                                         alt="right arrow icon">
                                     Back
                                 </button>
                                 <button type="button" class="proceed switch-form pr-btn">
                                     Proceed
-                                    <img src="./images/arrow-circle-right.svg" alt="right arrow icon">
+                                    <img src="arrow-circle-right.svg" alt="right arrow icon">
                                 </button>
                                 <button type="submit" class="proceed submit-btn">
                                     Proceed
-                                    <img src="./images/arrow-circle-right.svg" alt="right arrow icon">
+                                    <img src="arrow-circle-right.svg" alt="right arrow icon">
                                 </button>
                             </div>
                         </form>
@@ -441,12 +419,8 @@
                 </div>
             </div>
 
-            <div class="markup-container">
-                
-            </div>
-
             <!-- Preview Doc Modal -->
-            <div class="doc-wrapper doc-toggle">
+            <div class="doc-wrapper">
                 <div class="inner-doc">
 
                 </div>
@@ -461,7 +435,7 @@
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
-    <script src="./JS/dashboard.js"></script>
+    <script src="dashboard.js"></script>
 
 </body>
 

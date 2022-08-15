@@ -22,7 +22,7 @@ form.addEventListener('submit', e => {
             token: linkToken
         };
     
-        fetch('https://termsbuddy.herokuapp.com/api/password-reset/confirm/', {
+        fetch('https://termbuddy.herokuapp.com/api/password-reset/confirm/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,7 +30,7 @@ form.addEventListener('submit', e => {
             body: JSON.stringify(data)
         }).then(res => {
             if (res.status === 200) {
-                window.location.href = 'https://abshaibu.github.io/test-P71/login.html';
+                window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
             } else {
                 incorrect.style.display = 'flex';
                 errorText.innerHTML = 'Password must be at least 8 characters long';

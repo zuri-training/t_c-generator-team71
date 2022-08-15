@@ -44,7 +44,7 @@ form.addEventListener('submit', e => {
         let authToken;
 
         // Send sign up form details to backend
-        fetch('https://termsbuddy.herokuapp.com/api/users/register/', {
+        fetch('https://termbuddy.herokuapp.com/api/users/register/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -52,7 +52,7 @@ form.addEventListener('submit', e => {
             body: JSON.stringify(data)
         }).then(res => {
             if (res.status === 201) {
-                window.location.href = 'https://abshaibu.github.io/test-P71/dashboard/dashboard.html'
+                window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/dashboard/dashboard.html'
             } else {
                 incorrect.style.display = 'flex';
                 incorrect.innerHTML = 'Email already exists'
@@ -65,13 +65,13 @@ form.addEventListener('submit', e => {
             return res.json();
         }).then(data => {
             authToken = {
-                firstName: data.first_name,
-                lastName: data.last_name,
-                email: data.email,
                 refresh: data.tokens.refresh,
                 access: data.tokens.access,
                 id: data.id
             }
+            localStorage.setItem('fname', data.first_name)
+            localStorage.setItem('lname', data.last_name)
+            localStorage.setItem('email', data.email)
             localStorage.setItem('credentials', JSON.stringify(authToken));
             return authToken;
         }).catch(error => console.log(error));

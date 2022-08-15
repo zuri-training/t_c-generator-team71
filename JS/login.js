@@ -6,6 +6,7 @@ const errEmail = document.querySelector('.error-email')
 const errPassword = document.querySelector('.error-password')
 const incorrect = document.querySelector('.incorrect')
 const incorrectText = document.querySelector('.incorrect-text')
+const baseUrl = 'https://termbuddy.herokuapp.com/api';
 
 //onclick, check if the input type is [password] if it is, switch the input type [text] 
 xIcon.addEventListener('click', () => {
@@ -47,7 +48,7 @@ form.addEventListener('submit', (e) => {
     const data = Object.fromEntries(formData);
     console.log(data);
 
-    fetch('https://termsbuddy.herokuapp.com/api/users/obtain-token/', {
+    fetch('https://termbuddy.herokuapp.com/api/users/obtain-token/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -55,7 +56,7 @@ form.addEventListener('submit', (e) => {
         body: JSON.stringify(data)
     }).then(res => {
         if (res.status === 201) {
-            window.location.href = 'https://abshaibu.github.io/test-P71/dashboard/dashboard.html'
+            window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/dashboard/dashboard.html'
         } else {
             incorrect.style.display = 'flex';
             incorrectText.innerHTML = 'Incorrect email or password';
@@ -75,20 +76,7 @@ form.addEventListener('submit', (e) => {
         }
         localStorage.setItem('credentials', JSON.stringify(authToken));
         return authToken;
+    }).then({
+
     }).catch(error => console.log(error));
-
 })
-
-
-// const formData = new FormData(form);
-// const data = Object.fromEntries(formData);
-// console.log(data);
-
-// fetch('https://termsbuddy.herokuapp.com/api/users/newsletter/', {
-//     method: 'POST',
-//     headers: {
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify(data)
-// }).then(res => { console.log(res);
-// }).then(data => {console.log(data)}).catch(error => console.log(error));

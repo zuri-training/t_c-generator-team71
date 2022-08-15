@@ -9,8 +9,55 @@ const modalOnes = document.querySelector('.modal1-btn');
 const modalTwos = document.querySelector('.modal2-btn');
 const body = document.querySelector('body');
 const previewWrapper = document.querySelector('.preview');
-const baseUrl = 'https://termsbuddy.herokuapp.com/api';
-const form = document.querySelector('form');
+const baseUrl = 'https://termbuddy.herokuapp.com/api';
+const forms = document.querySelectorAll('form');
+let termsObj = {};
+let privacyObj = {};
+let downloadObj;
+let singlePrivacyObj = {};
+let singleTermsObj = {};
+
+
+const wrapper = document.querySelector(".wrapper");
+wrapper.addEventListener('click', (e) => {
+    const id = e.target.getAttribute('data-id')
+    const docName = e.target.getAttribute('data-bar')
+    if (e.target.id === 'download') {
+        if (e.target.closest('.terms-c')) {
+            handleDownload(termsObj)
+        } else if (e.target.closest('.privacy-p')) {
+            handleDownload(privacyObj)
+        }
+    }
+    if (e.target.classList.contains('delete')) {
+        const docId = e.target.getAttribute('data-id');
+        const cate = e.target.getAttribute('data-category')
+        let category;
+        if (cate === 'terms') {
+            category = 'terms-and-conditions';
+            deleteDoc(docId, category)
+        } else if (cate === 'privacy') {
+            category = 'privacy-policies';
+            deleteDoc(docId, category)
+        }
+    }
+
+})
+const previewCons = document.querySelector(".preview-cons");
+previewCons.addEventListener('click', (e) => {
+    if (e.target.classList.contains('docu-prim')) {
+        const id = e.target.getAttribute('data-id')
+        const docName = e.target.getAttribute('data-bar')
+        openPreview(id, docName);
+    }
+})
+
+const docWrapper = document.querySelector('.doc-wrapper');
+docWrapper.addEventListener('click', (e) => { 
+    if (e.target.id === 'download') {
+        handleDownload(downloadObj)
+    }
+})
 
 // Sidebar Toggler
 expander.addEventListener('click', () => {
@@ -27,24 +74,26 @@ toggler.forEach(toggle => {
 
 // Toggle Document Form Modal
 modalOnes.addEventListener('click', () => {
-        modalOne.classList.toggle('modal');
-        body.classList.toggle('no-scroll');
-        modalTwo.classList.toggle('changes');
+    modalOne.classList.toggle('modal');
+    body.classList.toggle('no-scroll');
+    modalTwo.classList.toggle('changes');
     openModal.classList.toggle('changes');
     previewWrapper.innerHTML = mainContent;
+    location.reload();
 })
-    
+
 modalTwos.addEventListener('click', () => {
     modalTwo.classList.remove('modal');
     body.classList.toggle('no-scroll');
     modalTwo.classList.toggle('changes');
     openModal.classList.toggle('changes');
     previewWrapper.innerHTML = mainContent;
+    location.reload();
 
 })
 
 // New Terms Modal
-function termModal() { 
+function termModal() {
     modalOne.classList.toggle('modal');
     body.classList.toggle('no-scroll');
     openModal.classList.remove('changes');
@@ -52,7 +101,7 @@ function termModal() {
 }
 
 // New Policy Modal
-function privacyModal() { 
+function privacyModal() {
     modalTwo.classList.toggle('modal');
     modalTwo.classList.remove('changes');
     body.classList.toggle('no-scroll');
@@ -64,26 +113,15 @@ bizDetails.addEventListener('submit', (e) => {
     e.preventDefault();
     const sendTo = `${baseUrl}/terms-and-conditions/create/`;
     const formData = new FormData(bizDetails);
-    formData.append('permanent', false);
-    const data = Object.fromEntries(formData);
-    localStorage.setItem('privacy', data.document_name);
-    handleSave(data, sendTo);
-    console.log(data);
+    // formData.append('permanent', false);
+    let data = Object.fromEntries(formData);
+    data.permanent = false
+    termsObj = data;
+    termsObj.name = 'terms';
     document.querySelector('.inner-preview').innerHTML = generateTermsTemplate(data);
-    modalOne.classList.add('add-progress');
-    body.classList.toggle('no-scroll');
-    document.querySelector('.heading').innerHTML = 'Preview';
-    if (openModal.classList.contains('modal1')) {
-        document.querySelector('.add-two').style.display = 'none';
-        document.querySelector('.add-one').style.display = 'block';
-    }
-
-    setTimeout(() => {
-        modalOne.classList.toggle('modal');
-        modalOne.classList.remove('changes');
-        modalOne.classList.remove('add-progress');
-        modalTwo.classList.remove('changes');
-    }, 300);
+    document.querySelector('.preview-ctas').classList.add('terms-c');
+    const doc = "terms"
+    handleSave(data, sendTo, doc)
 })
 
 // Business Privacy Details Form
@@ -92,36 +130,26 @@ priDetails.addEventListener('submit', (e) => {
     e.preventDefault();
     const sendTo = `${baseUrl}/privacy-policies/create/`;
     const formData = new FormData(priDetails);
-    formData.append('permanent', false);
-    const data = Object.fromEntries(formData);
-    localStorage.setItem('privacy', data.document_name);
-    handleSave(data, sendTo);
+    // formData.append('permanent', false);
+    let data = Object.fromEntries(formData);
+    data.permanent = false
+    privacyObj = data;
+    privacyObj.name = 'privacy';
     document.querySelector('.inner-preview').innerHTML = generatePrivacyTemplate(data);
-
-    modalTwo.classList.add('add-progress');
-    body.classList.toggle('no-scroll');
-    document.querySelector('.heading').innerHTML = 'Preview';
-    if (!openModal.classList.contains('modal2')) {
-        document.querySelector('.add-one').style.display = 'none';
-        document.querySelector('.add-two').style.display = 'block';
-    }
-
-    setTimeout(() => {
-        modalTwo.classList.toggle('modal');
-        modalTwo.classList.remove('changes');
-        modalTwo.classList.remove('add-progress');
-    }, 300);
+    document.querySelector('.preview-ctas').classList.add('privacy-p');
+    const doc = "privacy"
+    handleSave(data, sendTo, doc);
 })
 
 // Switching Form Content
 const switchForms = document.querySelectorAll('.switch-form');
 switchForms.forEach(swap => {
     swap.addEventListener('click', () => {
-            openModal.classList.toggle('changes');
-            openModal.classList.remove('add-progress');
-            modalTwo.classList.toggle('changes');
-            modalTwo.classList.remove('add-progress');
-                previewWrapper.innerHTML = preview;
+        openModal.classList.toggle('changes');
+        openModal.classList.remove('add-progress');
+        modalTwo.classList.toggle('changes');
+        modalTwo.classList.remove('add-progress');
+        previewWrapper.innerHTML = preview;
     })
 })
 
@@ -143,40 +171,18 @@ const mainContent = `
                                 <div class="terms-wrapper">
                                     <button class="docu-btn modal1-btn terms-btn" onclick="termModal()">
                                         <div>
-                                            <img src="./images/plus.svg" alt="plus icon">
+                                            <img src="plus.svg" alt="plus icon">
                                         </div>
-                                        <p> <img src="./images/file.svg" alt="file icon">New</p>
+                                        <p> <img src="file.svg" alt="file icon">New</p>
                                     </button>
-                                    <div>
-                                        <button class="docu-btn docu-primary doc-toggle" >
-                                            <div>
-                                                <img src="./images/docu-image.png" alt="an image of a document">
-                                            </div>
-                                            <div>
-                                                <p>
-                                                    <img src="./images/eye-dashboard.svg" alt="an eye icon">Preview
-                                                </p>
-                                            </div>
-                                        </button>
-                                    </div>
                                 </div>
                             </div>
                             <div class="privacy">
                                 <h2>Privacy Policy</h2>
-                                <div class="privacy-wrapper terms-wrapper">
+                                <div class="privacy-wrapper">
                                     <button class="docu-btn modal2-btn privacy-btn" onclick="privacyModal()">
-                                        <img src="./images/plus.svg" alt="plus icon">
-                                        <p><img src="./images/policy.svg" alt="file icon">New</p>
-                                    </button>
-                                    <button class="docu-btn docu-primary doc-toggle" >
-                                        <div>
-                                            <img src="./images/docu-image.png" alt="an image of a document">
-                                        </div>
-                                        <div>
-                                            <p>
-                                                <img src="./images/eye-dashboard.svg" alt="an eye icon">Preview
-                                            </p>
-                                        </div>
+                                        <img src="plus.svg" alt="plus icon">
+                                        <p><img src="policy.svg" alt="file icon">New</p>
                                     </button>
                                 </div>
                             </div>
@@ -188,39 +194,39 @@ previewWrapper.innerHTML = mainContent;
 // Preview Before Save Template
 const preview = `
        <div class="show-preview">
-        <h1 class="preview-heading">Preview of your ${localStorage.getItem('privacy')} document</h1>
+        <h1 class="preview-heading">Preview of your document</h1>
         <div class="preview-wrapper">
             <div class="inner-preview">
 
             </div>
             <div class="preview-ctas">
                 <button class="preview-btn preview-save add-one" onclick="handleAdd()">
-                    <img src="./images/folder-add.svg" alt="folder icon">
+                    <img src="folder-add.svg" alt="folder icon">
                     Save
                 </button>
                 <button class="preview-btn preview-save add-two" onclick="handleAddTwo()">
-                    <img src="./images/folder-add.svg" alt="folder icon">
+                    <img src="folder-add.svg" alt="folder icon">
                     Save
                 </button>
                 <div>
                     <button class="preview-btn preview-more" onclick="showMore()">
-                        <img src="./images/more.svg" alt="3 black dots  icon stacked on eachother">
+                        <img src="more.svg" alt="3 black dots  icon stacked on eachother">
                     </button>
                     <div class="more">
                         <button onclick="handleShare()">
-                            <img src="./images/share.svg" alt="share icon">
+                            <img src="share.svg" alt="share icon">
                             Share
                         </button>
-                        <button onclick="handleDownload()">
-                            <img src="./images/download.svg" alt="download icon">
+                        <button id="download">
+                            <img src="download.svg" alt="download icon">
                             Download
                         </button>
                         <button class="export" onclick="handleExport()">
-                            <img src="./images/export.svg" alt="export icon">
+                            <img src="export.svg" alt="export icon">
                             Export
                         </button>
                         <button onclick="handleEmbed()">
-                            <img src="./images/embed.svg" alt="embed icon">
+                            <img src="embed.svg" alt="embed icon">
                             Embed
                         </button>
                         <div class="export-as">
@@ -230,7 +236,7 @@ const preview = `
 
             </div>
             <button class="preview-btn preview-cls" onclick="handleExit()">
-                <img src="./images/cls.svg" alt="pen icon">
+                <img src="cls.svg" alt="pen icon">
                 Exit
         </button>
         </div>
@@ -238,33 +244,33 @@ const preview = `
         `;
 
 // Preview After Save Template
+let oPreview;
 const previewAfter = `
        <div class="show-preview">
-        <h1 class="preview-heading">Preview of your ${localStorage.getItem('privacy')} document</h1>
+        <h1 class="preview-heading">Preview of your document</h1>
         <div class="preview-wrapper">
-            <div class="inner-preview">
-
+            <div class="inner-preview open-preview">     
             </div>
             <div class="preview-ctas">
                 <div>
                     <button class="preview-btn preview-more" onclick="showMore()">
-                        <img src="./images/more.svg" alt="3 black dots  icon stacked on eachother">
+                        <img src="more.svg" alt="3 black dots  icon stacked on eachother">
                     </button>
                     <div class="more">
                         <button onclick="handleShare()">
-                            <img src="./images/share.svg" alt="share icon">
+                            <img src="share.svg" alt="share icon">
                             Share
                         </button>
-                        <button onclick="handleDownload()">
-                            <img src="./images/download.svg" alt="download icon">
+                        <button id="download">
+                            <img src="download.svg" alt="download icon">
                             Download
                         </button>
                         <button class="export" onclick="handleExport()">
-                            <img src="./images/export.svg" alt="export icon">
+                            <img src="export.svg" alt="export icon">
                             Export
                         </button>
                         <button onclick="handleEmbed()">
-                            <img src="./images/embed.svg" alt="embed icon">
+                            <img src="embed.svg" alt="embed icon">
                             Embed
                         </button>
                         <div class="export-as">
@@ -273,8 +279,8 @@ const previewAfter = `
                 </div>
 
             </div>
-            <button class="preview-btn preview-cls doc-toggle">
-                <img src="./images/cls.svg" alt="pen icon">
+            <button class="preview-btn preview-cls" onclick="closePreview()">
+                <img src="cls.svg" alt="pen icon">
                 Exit
         </button>
         </div>
@@ -391,7 +397,7 @@ function generateTermsTemplate(data) {
 
     template = sections.intro // setting the default value of templates to intro
 
-    Object.keys(data).slice(5).forEach((key) => {
+    Object.keys(data).slice(5, -2).forEach((key) => {
         let container = `<div>${sections[key]}</div>` // storing each object property in a div
         template += container // appending the agreement content to template
     })
@@ -405,7 +411,7 @@ function generatePrivacyTemplate(data) {
     let template;
 
     const sections = {
-        consent: `
+        intro: `
 <h1>Privacy Policy for ${data.business_name}</h1>
 
 <p>At ${data.business_name}, accessible from ${`<a href="${data.business_url}"> ${data.business_url}</a>`}, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by ${data.business_name} and how we use it.</p>
@@ -481,7 +487,7 @@ function generatePrivacyTemplate(data) {
 
     template = sections.intro // setting the default value of templates to intro
 
-    Object.keys(data).slice(5).forEach((key) => {
+    Object.keys(data).slice(6, -2).forEach((key) => {
         let container = `<div>${sections[key]}</div>` // storing each object property in a div
         template += container // appending the agreement content to template
     })
@@ -498,20 +504,29 @@ function handleExit() {
 
 // Saving And Pushing User Data To Database
 let tokenAccess = JSON.parse(localStorage.getItem('credentials'))
-function handleSave(formObject, endpoint) {
+
+function handleSave(formObject, endpoint, doc) {
     const access = tokenAccess.access;
     fetch(`${endpoint}`, {
         method: 'POST',
         headers: {
             "Content-Type": 'application/json',
-            "Authorization": `Bearer ${access}` 
+            "Authorization": `Bearer ${access}`
         },
         body: JSON.stringify(formObject)
     }).then(res => {
+        // if (!res.ok) {
+        //     throw new Error(res.statusText)
+        // }
         return res.json()
     }).then(data => {
         localStorage.setItem('doc-id', data.id)
-    }).catch(error => console.log(error));
+        doc === "terms" ? postTermsSave() : postPrivacySave()
+    })
+        .catch(error => {
+            console.log(error)
+            return false;
+        })
 }
 
 // Adding Data To Dashboard
@@ -520,8 +535,8 @@ function handleAdd() {
     const formData = new FormData(bizDetails);
     formData.append('permanent', true);
     const access = tokenAccess.access;
-const data = Object.fromEntries(formData);
-    fetch(`https://termsbuddy.herokuapp.com/api/terms-and-conditions/${localStorage.getItem('doc-id')}/update/`, {
+    const data = Object.fromEntries(formData);
+    fetch(`${baseUrl}/terms-and-conditions/${localStorage.getItem('doc-id')}/update/`, {
         method: 'PUT',
         headers: {
             "Content-Type": 'application/json',
@@ -534,9 +549,9 @@ const data = Object.fromEntries(formData);
         }
         return res.json()
     }).then(data => {
-        console.log(data);
         previewWrapper.innerHTML = mainContent;
         localStorage.removeItem('doc-id')
+        location.reload();
     }).catch(error => console.log(error));
 }
 
@@ -546,7 +561,7 @@ function handleAddTwo() {
     formData.append('permanent', true);
     const access = tokenAccess.access;
     const data = Object.fromEntries(formData);
-    fetch(`https://termsbuddy.herokuapp.com/api/privacy-policies/${localStorage.getItem('doc-id')}/update/`, {
+    fetch(`${baseUrl}/privacy-policies/${localStorage.getItem('doc-id')}/update/`, {
         method: 'PUT',
         headers: {
             "Content-Type": 'application/json',
@@ -559,9 +574,9 @@ function handleAddTwo() {
         }
         return res.json()
     }).then(data => {
-        console.log(data);
         previewWrapper.innerHTML = mainContent;
         localStorage.removeItem('doc-id')
+        location.reload();
     }).catch(error => console.log(error));
 }
 
@@ -585,15 +600,13 @@ const downloadTemplate = (template) => {
         'width': 170,
         'elementHandlers': specialElementHandlers,
     })
-    doc.save(`${localStorage.getItem('privacy') }.pdf`)
+    doc.save(`Document.pdf`)
 }
 
 // Downloading Document Created
-function handleDownload() {
-    privacyFormData = new FormData(priDetails)
-    privacyObjectData = Object.fromEntries(privacyFormData)
+function handleDownload(data) {
 
-    const finishedTemplate = generatePrivacyTemplate(privacyObjectData)
+    const finishedTemplate = data.name === "terms" ? generateTermsTemplate(data) : generatePrivacyTemplate(data)
     downloadTemplate(finishedTemplate)
     const moreOptions = document.querySelector('.more');
     moreOptions.classList.toggle('show-more');
@@ -608,7 +621,7 @@ function handleExport() {
                             <button onclick="docxFormat()">DOCX</button>
                             <button onclick="txtFormat()">TXT</button>
                             <button onclick="htmlFormat()">HTML</button>
-                        </div`
+                        </div>`
 }
 
 // Exporting as DOCX
@@ -619,15 +632,14 @@ function docxFormat() {
     // getting the inner-preview container and add an id attribute to it
     let innerPreview = document.querySelector('.inner-preview');
     innerPreview.setAttribute('id', 'preview-container')
-    console.log(innerPreview)
 
     // constructing the source data with the header, body and footer tags
-    let header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
-            "xmlns:w='urn:schemas-microsoft-com:office:word' "+
-            "xmlns='http://www.w3.org/TR/REC-html40'>"+
-            "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
+    let header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' " +
+        "xmlns:w='urn:schemas-microsoft-com:office:word' " +
+        "xmlns='http://www.w3.org/TR/REC-html40'>" +
+        "<head><meta charset='utf-8'><title>Export HTML to Word Document with JavaScript</title></head><body>";
     let footer = "</body></html>";
-    let previewContainer = header+document.getElementById('preview-container').innerHTML+footer;
+    let previewContainer = header + document.getElementById('preview-container').innerHTML + footer;
 
     // encoding previewContainer to form a URL
     let source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(previewContainer);
@@ -636,7 +648,7 @@ function docxFormat() {
     let anchorElement = document.createElement('a');
     document.body.appendChild(anchorElement);
     anchorElement.href = source;
-    anchorElement.download = 'termbuddy.doc';
+    anchorElement.download = 'Document.doc';
     anchorElement.click();
     document.body.removeChild(anchorElement);
 }
@@ -646,20 +658,20 @@ function txtFormat() {
     const showExport = document.querySelector('.export-as');
     showExport.classList.toggle('show-export');
 
-    // create an empty array that will contain the content in inner-preview
-    let arrayOfInnerPreviewContent = []
-    // storing the text of inner preview in a variable
-    let innerPreviewContent = document.querySelector('.inner-preview').innerText
-    // pushing the content previewd to the array
-    arrayOfInnerPreviewContent.push(innerPreviewContent)
-    //  converting the array to a string
-    let arrayToString =  arrayOfInnerPreviewContent.toString()
-    // converting the content to a text file
-    let file = new Blob([arrayToString],{type:'text'})
-    // creating a link to download the text file
-    let anchorTag = document.createElement('a')
+        // create an empty array that will contain the content in inner-preview
+        let arrayOfInnerPreviewContent = []
+        // storing the text of inner preview in a variable
+        let innerPreviewContent = document.querySelector('.inner-preview').innerText
+        // pushing the content previewed to the array
+        arrayOfInnerPreviewContent.push(innerPreviewContent)
+        //  converting the array to a string
+        let arrayToString = arrayOfInnerPreviewContent.toString()
+        // converting the content to a text file
+        let file = new Blob([arrayToString], { type: 'text' })
+        // creating a link to download the text file
+        let anchorTag = document.createElement('a')
         anchorTag.href = URL.createObjectURL(file)
-        anchorTag.download = 'termbuddy.txt'  // name of file to be changed
+        anchorTag.download = 'Document.txt'  // name of file to be changed
         anchorTag.click()
 }
 
@@ -673,8 +685,8 @@ function htmlFormat() {
 function handleShare() {
     const showExport = document.querySelector('.export-as');
     showExport.classList.toggle('show-export');
-    showExport.style.left = '-20.2rem'; 
-    showExport.style.top = '0'; 
+    showExport.style.left = '-20.2rem';
+    showExport.style.top = '0';
 
     showExport.innerHTML = `<div class="embed-link">
                                 <small>Copy this link to share the document</small>
@@ -691,48 +703,200 @@ function share() {
 function handleEmbed() {
     const showExport = document.querySelector('.export-as');
     showExport.classList.toggle('show-export');
-}
-
-const access = tokenAccess;
-const x = access.firstName;
-const y = access.lastName;
-document.querySelector('.num-figure').innerHTML = `${access.email}`;
-document.querySelector('.name').innerHTML = `${x} ${y}`;
-document.querySelectorAll('.initials').forEach(initial => {
-    initial.innerHTML = `${x[0]}${y[0]}`;
-})
-
-// Displaying Documents user has created
-function handleDisplay() {
-    fetch(`${baseUrl}/users/${res.id}/documents`, {
-        method: 'GET',
-        headers: {
-            'Authorization': `Bearer ${res.access}`
-        }
-    }).then(res => {
-        return res.json()
-    }).then(data => {
-        console.log(data);
-        const docList = document.querySelector('.doc-list');
-        data.forEach(doc => {
-            docList.innerHTML += `<li>${doc.title}</li>`;
-        }
-        )
-    }).catch(error => console.log(error));
+    showExport.classList.toggle('show-embed');
+    showExport.innerHTML = `<textarea>${oPreview}
+    </textarea>`
 }
 
 // Previewing Generated and Saved Document
-// function previewDoc() { 
-    document.querySelectorAll('.doc-toggle').forEach(doc => {
-        doc.addEventListener('click', () => {
-            document.querySelector('.doc-wrapper').classList.toggle('show-doc');
-            document.querySelector('.inner-doc').innerHTML = previewAfter;
-        })
+document.querySelectorAll('.doc-toggle').forEach(doc => {
+    doc.addEventListener('click', () => {
+        document.querySelector('.doc-wrapper').classList.toggle('show-doc');
+        document.querySelector('.inner-doc').innerHTML = previewAfter;
     })
-// }
+})
+
+function closePreview() {
+    document.querySelector('.doc-wrapper').classList.toggle('show-doc');
+}
 
 // LogOut
 function logOut() {
     localStorage.removeItem('credentials');
-    window.location.href = 'https://abshaibu.github.io/test-P71/login.html';
+    localStorage.removeItem('fname')
+    localStorage.removeItem('lname')
+    localStorage.removeItem('email')
+    window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+    const tokenAccess = JSON.parse(localStorage.getItem('credentials'))
+    if (tokenAccess) {
+        // location.reload();
+        handleDisplay();
+        handleGetUser();
+    } else {
+        window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
+    }
+})
+
+// Get user details
+function handleGetUser() {
+    let tokens = JSON.parse(localStorage.getItem('credentials'));
+    fetch(`${baseUrl}/users/${tokens.id}/`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${tokens.access}`
+        }
+    }).then(res => {
+        return res.json()
+    }).then(data => {
+        localStorage.setItem('fname', data.first_name)
+        localStorage.setItem('lname', data.last_name)
+        localStorage.setItem('email', data.email)
+    }).catch(error => console.log(error));
+    let x = localStorage.getItem('fname');
+    let y = localStorage.getItem('lname');
+    document.querySelector('.num-figure').innerHTML = `${localStorage.getItem('email')}`;
+    document.querySelector('.name').innerHTML = `${x} ${y}`;
+    document.querySelectorAll('.initials').forEach(initial => {
+        initial.innerHTML = `${x[0]}${y[0]}`;
+    })
+}
+
+// Displaying All Documents user has created
+const pWrapper = document.querySelectorAll('.privacy-wrapper')
+const tWrapper = document.querySelectorAll('.terms-wrapper')
+
+function handleDisplay() {
+    let tokenAccess = JSON.parse(localStorage.getItem('credentials'))
+    fetch(`${baseUrl}/users/${tokenAccess.id}/documents`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${tokenAccess.access}`
+        }
+    }).then(res => {
+        return res.json()
+    }).then(data => {
+        privacyDocs = data.privacy_policies;
+        privacyDocs.forEach(pd => {
+            pd.name = "privacy"
+            oPreview = generatePrivacyTemplate(pd);
+            pWrapper.forEach(wrapper => {
+                wrapper.innerHTML += renderDocuments(pd);
+            })
+        })
+
+        termsDocs = data.terms;
+        termsDocs.forEach(td => {
+            td.name = "terms"
+            tWrapper.forEach(wrapper => {
+                wrapper.innerHTML += renderDocuments(td);
+            })
+        })
+    }).catch(error => console.log(error));
+}
+
+
+// Get Individual Document
+const renderDocuments = (document) => {
+    const dashboard = `<div>
+    <button data-category=${document.name} class="thrash delete" data-id=${document.id}><img class="delete" src="../images/trash.svg" data-category=${document.name} data-id=${document.id}></button>
+    <p>${document.document_name}</p>
+<button class="docu-btn docu-primary docu-prim" data-id=${document.id} data-bar=${document.name}>
+    <div>
+        <img class="docu-prim" data-id=${document.id} data-bar=${document.name} src="docu-image.png" alt="an image of a document">
+    </div>
+    <div>
+        <p class="docu-prim" data-id=${document.id} data-bar=${document.name}>
+            <img src="eye.svg" class="docu-prim" data-id=${document.id} data-bar=${document.name} alt="an eye icon">Preview
+        </p>
+    </div>
+</button>
+</div>
+    </div>`
+
+    return dashboard
+}
+
+// Previewing Individual Document
+function openPreview(docId, docName) {
+    const docType = (docName === "terms") ? "terms-and-conditions" : "privacy-policies";
+    document.querySelector('.doc-wrapper').classList.toggle('show-doc');
+    document.querySelector('.inner-doc').innerHTML = previewAfter;
+    fetch(`${baseUrl}/${docType}/${docId}`, {
+        method: 'GET',
+        headers: {
+            'Authorization': `Bearer ${tokenAccess.access}`
+        }
+    }).then(res => {
+
+        return res.json()
+    }).then(data => {
+        let mutateData = data;
+        delete mutateData.permanent;
+        delete mutateData.user_id;
+        delete mutateData.id;
+        delete mutateData.additional_text;
+        delete mutateData.create_date;
+        delete mutateData.last_edit;
+        if (docName === "terms") {
+            termsObj = mutateData
+            downloadObj = termsObj
+            downloadObj.name = "terms"
+        } else {
+            privacyObj = mutateData
+            downloadObj = privacyObj
+        }
+
+        document.querySelector('.inner-preview').innerHTML = docName === "terms" ? generateTermsTemplate(mutateData) : generatePrivacyTemplate(mutateData);
+    })
+}
+
+function deleteDoc(id, docCate) {
+    fetch(`${baseUrl}/${docCate}/${id}/delete`, {
+        method: 'DELETE',
+        headers: {
+            'Authorization': `Bearer ${tokenAccess.access}`
+        }
+    }).then(res => {
+        return res.status;
+    }).then(data => {
+        location.reload();
+    }).catch(error => console.log(error));
+}
+
+
+function postTermsSave() {
+    modalOne.classList.add('add-progress');
+    body.classList.toggle('no-scroll');
+    document.querySelector('.heading').innerHTML = 'Preview';
+    if (openModal.classList.contains('modal1')) {
+        document.querySelector('.add-two').style.display = 'none';
+        document.querySelector('.add-one').style.display = 'block';
+    }
+
+    setTimeout(() => {
+        modalOne.classList.toggle('modal');
+        modalOne.classList.remove('changes');
+        modalOne.classList.remove('add-progress');
+        modalTwo.classList.remove('changes');
+    }, 300);
+}
+
+function postPrivacySave() {
+
+    modalTwo.classList.add('add-progress');
+    body.classList.toggle('no-scroll');
+    document.querySelector('.heading').innerHTML = 'Preview';
+    if (!openModal.classList.contains('modal2')) {
+        document.querySelector('.add-one').style.display = 'none';
+        document.querySelector('.add-two').style.display = 'block';
+    }
+
+    setTimeout(() => {
+        modalTwo.classList.toggle('modal');
+        modalTwo.classList.remove('changes');
+        modalTwo.classList.remove('add-progress');
+    }, 300);
 }

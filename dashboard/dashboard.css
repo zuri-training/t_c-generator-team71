@@ -217,12 +217,38 @@ main {
     color: #FEFEFE;
 }
 
-.terms-wrapper {
+.drafts,
+.terms-wrapper,
+.privacy-wrapper {
     display: flex;
     gap: 1.56rem;
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 2.5rem;
+}
+
+textarea {
+    outline: #2B7A78 solid 2px;
+    border: 1px solid #fefe;
+    width: 500px;
+    /* width: 100%; */
+    height: 400px;
+}
+
+.thrash {
+    position: absolute;
+    top: 30px;
+    right: -1px;
+    background: #F9C3B4;
+    z-index: 1;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 0 .5rem 0 0.5rem;
+    transition: all 0.25s linear;
+}
+
+.thrash:hover {
+    padding: .8rem;
 }
 
 .docu-btn {
@@ -332,6 +358,13 @@ main {
 .modal-form-wrapper button {
     padding: 0;
     border: none;
+}
+
+.inner-doc .show-preview {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+
 }
 
 .modal-form-wrapper p {
@@ -614,6 +647,11 @@ input[type="checkbox"] {
     font-weight: 600;
 }
 
+.export-as.show-embed {
+    left: -25.2rem !important;
+    top: -17rem !important;
+}
+
 .show-export {
     opacity: 1;
     z-index: 3;
@@ -667,6 +705,19 @@ input[type="checkbox"] {
 .show-doc {
     transform: scale(1);
     z-index: 9999999;
+}
+
+.inner-doc {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    z-index: 9999999999;
+    height: 100%;
+    padding-top: 15rem;
+    background: #F5F5F5;
+    padding: 2rem;
 }
 
 /* Profile Tab */
@@ -828,7 +879,9 @@ input[type="checkbox"] {
         display: none;
     }
 
-    .terms-wrapper {
+    .drafts,
+    .terms-wrapper,
+    .privacy-wrapper {
         gap: 1.3rem;
     }
 

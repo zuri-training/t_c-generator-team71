@@ -16,7 +16,7 @@ form.addEventListener('submit', e => {
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
     
-        fetch('https://termsbuddy.herokuapp.com/api/password-reset/', {
+        fetch('https://termbuddy.herokuapp.com/api/password-reset/', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ form.addEventListener('submit', e => {
                     incorrect.style.display = 'none';
                 }, 2500)
             } else {
-                window.location.href = 'https://abshaibu.github.io/test-P71/login.html';
+                window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
     
             }
     
