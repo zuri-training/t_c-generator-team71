@@ -21,6 +21,9 @@
   
   .nav {
     display: flex;
+    width: 90%;
+    max-width: 600px;
+    margin: 2rem auto;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 3rem;
@@ -28,7 +31,7 @@
   
   .website-logo {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: #2b7a78;
     line-height: 32px;
   }
@@ -49,21 +52,25 @@
   }
   
   .img-illustration {
-    width: 250px;
-    height: 248px;
-    margin: auto;
+    /* width: 250px; */
+    /* height: 248px; */
+    width: 90%;
+    text-align: center;
+    margin: 0 auto;
     padding-bottom: 3rem;
   }
   
   .img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    height: auto;
   }
   
   .signin {
-    width: 343px;
+    /* width: 343px; */
+    width: 95%;
+    max-width: 500px;
     margin: auto;
-    padding: 2rem;
+    padding: 2rem 0;
     background-color: #FEFEFE;
     border-radius: 0 0 1rem 1rem;
   }
@@ -85,14 +92,19 @@
     line-height: 1.5rem;
     font-weight: 400;
   }
+
+  .form-div {
+    width: 90%;
+    margin: 1rem auto;
+  }
   
   .form-input {
-    margin: 0.4rem 0;
+    margin: 0.4rem 0 0 0;
     width: 100%;
     padding: 0.75rem 2.5rem;
     border-radius: 8px;
     border: 1px solid #bababa;
-    background-color: #f5f5f5;
+    /* background-color: #f5f5f5; */
     font-size: 1rem;
     font-weight: 400;
   }
@@ -127,8 +139,11 @@
   
   .psw {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    margin-top: .5rem;
+    /* margin-top: .5rem; */
+    width: 90%;
+    margin: 1rem auto;
   }
   
   .psw-remember {
@@ -145,7 +160,9 @@
   
   .psw-remember input[type='checkbox'] {
     accent-color: #2b7a78;
-    padding: 20%;
+    /* padding: 20%; */
+    width: 20px;
+    height: 20px;
   }
   
   .psw-forgot {
@@ -184,15 +201,21 @@
     font-size: 1rem;
     line-height: 24px;
   }
+
+  .signin-btn__container {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 1.5rem;
+  }
   
   .signin-btn {
     background-color: #2b7a78;
     border-radius: 8px;
     width: 100%;
-    height: 48px;
+    /* height: 48px; */
     padding: 0.75rem 2rem;
     border: none;
-    margin-top: 1.5rem;
+    /* margin-top: 1.5rem; */
     font-weight: 600;
     font-size: 1rem;
     line-height: 1.5rem;
@@ -260,18 +283,29 @@
   /* MEDIA QUERIES AND RESPONSIVENESS */
   
   @media screen and (min-width: 768px) {
+    .nav {
+      max-width: 900px;
+    }
+
     body {
       padding: 2.5rem;
+      padding-top: 0;
       margin: auto;
     }
   
     .img-illustration {
-      width: 500px;
-      height: 350px;
+      width: 100%;
+      /* width: 500px;
+      height: 350px; */
+    }
+
+    .img {
+      width: 400px;
     }
   
     .signin {
-      width: 500px;
+      width: 74%;
+      max-width: 600px;
       padding-top: 2rem;
     }
   
@@ -289,16 +323,30 @@
     }
   }
   
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 950px) {
+    .nav {
+      width: 90%;
+      max-width: 1200px;
+    }
+
+    .website-logo {
+      font-size: 1.5rem;
+    }
     .main {
-      width: 996px;
-      height: 712px;
+      width: 95%;
+      max-width: 1100px;
+      /* width: 996px; */
+      /* height: 712px; */
       margin: auto;
       display: flex;
     }
   
     .img-illustration {
-      width: 406px;
+      width: 42%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* width: 406px; */
       height: 712px;
       border-bottom-left-radius: 32px;
       border-top-left-radius: 32px;
@@ -308,17 +356,23 @@
     }
   
     .img {
-      width: 326.08px;
+      /* width: 326.08px;
       height: 259.09px;
       position: absolute;
       top: 169.48px;
-      left: 20px;
+      left: 20px; */
+      width: 380px;
+      max-width: 100%;
+      height: auto;
     }
   
     .signin {
-      padding: 2rem 6rem;
-      width: 590px;
+      padding: 2rem 0;
+      width: 58%;
+      max-width: none;
+      /* width: 590px; */
       height: 712px;
+      /* flex-grow: 2; */
       border-bottom-right-radius: 32px;
       border-top-right-radius: 32px;
       border-bottom-left-radius: 0;
@@ -327,6 +381,23 @@
   
     .form {
       width: 400px;
+      /* margin: 0 auto; */
+      position: relative;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .form-div {
+      width: 100%;
+    }
+
+    .psw {
+      width: 100%;
+    }
+
+    .signin-btn__container {
+      width: 100%;
     }
   }
   
