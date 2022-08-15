@@ -392,7 +392,7 @@ ul.nav-links li {
     position: absolute;
     bottom: 0;
     left: 0;
-    /* border-radius: 12px; */
+    border-radius: 9px;
 }
 
 .testimonial-section__card-content {
@@ -411,6 +411,14 @@ ul.nav-links li {
     max-width: 475px;
     max-height: 260px;
 
+}
+
+.testimonial-section .left-card {
+    border-radius: 9px 0 0 9px;
+}
+
+.testimonial-section .right-card {
+    border-radius: 0 9px 9px 0;
 }
 
 .testimonial-section .left-card h3, .testimonial-section .right-card h3 {
@@ -529,13 +537,11 @@ ul.nav-links li {
 }
 
 .green-background {
-    /* border: 1px solid red; */
     background-color: #1D5150;
     width: 100%;
     padding: 5rem 0 13rem 0;
     position: absolute;
     top: 0;
-    /* z-index: -1; */
 }
 
 .HIW-section__content-wrapper {
@@ -547,37 +553,26 @@ ul.nav-links li {
     z-index: 500;
 }
 
-/* .HIW-section__card-wrapper {
-    width: 80%;
-    padding: 12rem 0 2rem 0;
-    margin: 0 auto;
+.HIW-section__card-wrapper {
+    width: 88%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 12rem 0 2rem 0;
+    margin: 0 auto;
     z-index: 500;
-}
-
-.HIW-section__card-parent {
-    border: 1px solid red;
-    width: 50%;
-    min-width: 550px;
-    padding-bottom: 3rem;
-    flex-wrap: wrap;
-    display: flex;
-    justify-content: space-around;
 }
 
 .HIW-section__card {
     background-color: white;
-    border: 1px solid lightgrey;
-    width: 49%;
-    min-width: 280px;
-    padding: 2rem 0;
-    margin: 1rem 0;
+    width: 100%;
+    max-width: 296px;
+    padding: 2rem 0 1.7rem 0;
+    margin: 3rem 0.3rem;
     border-radius: 10px;
     position: relative;
     box-shadow: 0 4px 10px rgb(0, 0, 0, 0.07);
-} */
+}
 
 .number-wrapper {
     /* border: 1px solid red; */
@@ -592,6 +587,7 @@ ul.nav-links li {
 
 .number-wrapper span {
     background-color: white;
+    color: #525252;
     display: block;
     font-size: 2rem;
     font-weight: 700;
@@ -605,6 +601,11 @@ ul.nav-links li {
 .HIW-section__card-image {
     text-align: center;
     padding: 2rem 0;
+}
+
+.HIW-section__card-image .user-tag {
+    width: 65px;
+    height: 65px;
 }
 
 .HIW-section__card-content {
@@ -753,7 +754,7 @@ ul.nav-links li {
 }
 
 .newsletter-section__form-content .input-field input {
-    color: #BABABA;
+    color: grey;
     width: 100%;
     padding: 1rem 0 1rem 3.5rem;
     border: none;
@@ -1015,8 +1016,8 @@ ul.nav-links li {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        /* max-width: 1100px; */
-        /* margin-inline: auto; */
+        max-width: 1100px;
+        margin-inline: auto;
     }
 
     .client-section__card {
