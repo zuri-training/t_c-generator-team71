@@ -38,7 +38,8 @@ form.addEventListener('submit', e => {
                 }, 3000)
             }
             return res.json()
-        }).then(data => console.log(data.game))
+        }).then(data => console.log(data))
             .catch(error => console.log(error));
+
     }
 })
