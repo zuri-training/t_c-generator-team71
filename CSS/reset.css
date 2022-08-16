@@ -68,6 +68,20 @@ header button:hover {
     color: #F5F5F5;
 }
 
+.success {
+    background: #82f790;
+    color: #146b44;
+    font-size: .95rem;
+    padding: .3rem .9rem;
+    border-radius: .5rem;
+    margin-top: .4rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    text-align: left;
+    display: none;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;

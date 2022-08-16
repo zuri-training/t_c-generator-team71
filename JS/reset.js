@@ -11,7 +11,7 @@ form.addEventListener('submit', e => {
         setTimeout(() => {
             incorrect.style.display = 'none';
         }, 2500)
-    } else { 
+    } else {
 
         let data = {};
         let link = window.location.href;
@@ -30,7 +30,11 @@ form.addEventListener('submit', e => {
             body: JSON.stringify(data)
         }).then(res => {
             if (res.status === 200) {
-                window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
+                document.querySelector('.success').style.display = 'block';
+                form.reset();
+                setTimeout(() => { 
+                    window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
+                },3000);
             } else {
                 incorrect.style.display = 'flex';
                 errorText.innerHTML = 'Password must be at least 8 characters long';

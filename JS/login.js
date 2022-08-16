@@ -46,9 +46,7 @@ form.addEventListener('submit', (e) => {
 
     const formData = new FormData(form);
     const data = Object.fromEntries(formData);
-    console.log(data);
-
-    fetch('https://termbuddy.herokuapp.com/api/users/obtain-token/', {
+    fetch(`${baseUrl}/users/obtain-token/`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -65,10 +63,8 @@ form.addEventListener('submit', (e) => {
                 incorrect.style.display = 'none';
             }, 2500)
         }
-        console.log(res);
         return res.json();
     }).then(data => {
-        console.log(data)
         authToken = {
             refresh: data.tokens.refresh,
             access: data.tokens.access,

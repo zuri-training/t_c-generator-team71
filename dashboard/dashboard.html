@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="favicon" href="green-square.svg">
+    <link rel="icon" href="green-square.svg">
     <link rel="stylesheet" href="dashboard.css">
-    <title>TermBuddy | Homepage</title>
+    <title>Dashboard | Termbuddy</title>
 </head>
 
 <body>
@@ -156,11 +156,16 @@
                                 <div class="third avatar_alt avatar_alt_alt">
                                     <span class="num-text  alt">Email</span>
                                     <div class="edit-btn">
-                                        <span class="num-figure">johndoe@gmail.com</span>
-                                        <button class="edit_btn" disabled>
-                                            <img src="edit-2.svg" alt="pen icon">
-                                            Edit
-                                        </button>
+                                        <form action="" style="margin-top:0"
+                                        class="profile-form">
+                                            <input type="email" name="email" placeholder="********"
+                                                style="padding-left:1rem"
+                                                class="email-change">
+                                            <button class="edit_btn" type="submit">
+                                                <img src="edit-2.svg" alt="pen icon">
+                                                Change
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
 
@@ -168,22 +173,26 @@
                             <div class="password white shadow">
                                 <span class="num-text  alt">Password</span>
                                 <div class="edit-btn">
-                                    <span class="star">**********</span>
-                                    <button class="edit_btn ed_btn" disabled>
-                                        <img src="edit-2.svg" alt="pen icon">
-                                        Change Password
-                                    </button>
+                                    <form action="" style="margin-top:0" class="profile-form">
+                                        <input type="password" name="password" value="********"
+                                        placeholder="New Password"
+                                            style="padding-left:1rem">
+                                        <button class="edit_btn ed_btn" type="submit">
+                                            <img src="edit-2.svg" alt="pen icon">
+                                            Change
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                         <div class="right">
                             <div class="draft white white_alt shadow">
                                 <h2>Total Number of Drafts Created</h2>
-                                <p>No data</p>
+                                <p class="draft-count">No data</p>
                             </div>
                             <div class="saved white white_alt white_alt_two shadow ">
                                 <h2 class="chop">Total Number of Saved Documents</h2>
-                                <p class="cc">No data</p>
+                                <p class="cc doc-count">No data</p>
                             </div>
                         </div>
                     </div>
@@ -226,7 +235,8 @@
                                     <label for="url">Website URL
                                         <img src="global.svg" alt="globe icon">
                                     </label>
-                                    <input type="text" name="business_url" id="url" placeholder="https://johndoe.com" required>
+                                    <input type="text" name="business_url" id="url" placeholder="https://johndoe.com"
+                                        required>
                                     <small>URL format must be https://johndoe.com</small>
                                 </div>
                                 <div>
@@ -242,7 +252,7 @@
                                     </label>
                                     <input type="text" name="contact_phone" id="phone" placeholder="+234 812 657 9745"
                                         required>
-                                        <small>phone format must be +234 XXX XXX XXXX</small>
+                                    <small>phone format must be +234 XXX XXX XXXX</small>
                                 </div>
                             </div>
                             <div class="terms-features">
@@ -328,8 +338,8 @@
                                     <label for="mbizname">Business Name
                                         <img src="shop.svg" alt="shop icon">
                                     </label>
-                                    <input type="text" name="business_name" id="mbizname"
-                                        placeholder="John Doe Limited" required>
+                                    <input type="text" name="business_name" id="mbizname" placeholder="John Doe Limited"
+                                        required>
                                 </div>
                                 <div>
                                     <label for="murl">Website URL
@@ -337,14 +347,14 @@
                                     </label>
                                     <input type="text" name="business_url" id="murl" placeholder="https://johndoe.com"
                                         required>
-                                        <small>URL format must be https://johndoe.com</small>
+                                    <small>URL format must be https://johndoe.com</small>
                                 </div>
                                 <div>
                                     <label for="memail">Email
                                         <img src="input-email.svg" alt="envelope icon">
                                     </label>
-                                    <input type="email" name="contact_email" id="memail"
-                                        placeholder="johndoe@gmail.com" required>
+                                    <input type="email" name="contact_email" id="memail" placeholder="johndoe@gmail.com"
+                                        required>
                                 </div>
                                 <div>
                                     <label for="mphone">Phone
@@ -352,7 +362,7 @@
                                     </label>
                                     <input type="text" name="contact_phone" id="mphone" placeholder="+234 812 657 9745"
                                         required>
-                                        <small>phone format must be +234 XXX XXX XXXX</small>
+                                    <small>phone format must be +234 XXX XXX XXXX</small>
                                 </div>
                             </div>
                             <div class="terms-features">
@@ -422,7 +432,6 @@
             <!-- Preview Doc Modal -->
             <div class="doc-wrapper">
                 <div class="inner-doc">
-
                 </div>
             </div>
         </main>
@@ -431,7 +440,7 @@
 
 
 
-    
+
     <!-- Scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>

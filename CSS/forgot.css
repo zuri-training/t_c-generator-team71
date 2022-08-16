@@ -186,6 +186,20 @@ input[type="submit"] {
     margin: 1rem 0 1rem;
 }
 
+.success {
+    background: #82f790;
+    color: #146b44;
+    font-size: .95rem;
+    padding: .3rem .9rem;
+    border-radius: .5rem;
+    margin-top: .4rem;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    text-align: left;
+    display: none;
+}
+
 .login-link {
     display: block;
     width: 7.5rem;

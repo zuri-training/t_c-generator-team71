@@ -16,6 +16,7 @@ let privacyObj = {};
 let downloadObj;
 let singlePrivacyObj = {};
 let singleTermsObj = {};
+const counter = {draft: 0, doc: 0}
 
 
 const wrapper = document.querySelector(".wrapper");
@@ -240,6 +241,11 @@ const preview = `
                 Exit
         </button>
         </div>
+        <!-- Embed Wrapper -->
+            <div class="embed">
+                <textarea name="embed" id="embed">
+                </textarea>
+            </div>
     </div>
         `;
 
@@ -284,6 +290,11 @@ const previewAfter = `
                 Exit
         </button>
         </div>
+        <!-- Embed Wrapper -->
+            <div class="embed">
+                <textarea name="embed" id="embed">
+                </textarea>
+            </div>
     </div>
         `;
 
@@ -487,7 +498,7 @@ function generatePrivacyTemplate(data) {
 
     template = sections.intro // setting the default value of templates to intro
 
-    Object.keys(data).slice(6, -2).forEach((key) => {
+    Object.keys(data).slice(8, -4).forEach((key) => {
         let container = `<div>${sections[key]}</div>` // storing each object property in a div
         template += container // appending the agreement content to template
     })
@@ -515,9 +526,6 @@ function handleSave(formObject, endpoint, doc) {
         },
         body: JSON.stringify(formObject)
     }).then(res => {
-        // if (!res.ok) {
-        //     throw new Error(res.statusText)
-        // }
         return res.json()
     }).then(data => {
         localStorage.setItem('doc-id', data.id)
@@ -586,6 +594,8 @@ function showMore() {
     moreOptions.classList.toggle('show-more');
     const showExport = document.querySelector('.export-as');
     showExport.classList.remove('show-export');
+    const embed = document.querySelector('.embed');
+    embed.classList.remove('show-embed');
 }
 
 // Downloading Document Created
@@ -620,7 +630,6 @@ function handleExport() {
                             <p>Export as</p>
                             <button onclick="docxFormat()">DOCX</button>
                             <button onclick="txtFormat()">TXT</button>
-                            <button onclick="htmlFormat()">HTML</button>
                         </div>`
 }
 
@@ -689,8 +698,8 @@ function handleShare() {
     showExport.style.top = '0';
 
     showExport.innerHTML = `<div class="embed-link">
-                                <small>Copy this link to share the document</small>
-                                <button onclick="share()">Document</but>
+                                <small>This Feature is coming soon</small>
+                                <button onclick="share()">Anticipate</but>
                             </div>`;
 }
 
@@ -701,10 +710,11 @@ function share() {
 
 // Embeding Document Created
 function handleEmbed() {
-    const showExport = document.querySelector('.export-as');
-    showExport.classList.toggle('show-export');
+    const showExport = document.querySelector('.embed');
     showExport.classList.toggle('show-embed');
-    showExport.innerHTML = `<textarea>${oPreview}
+
+
+    showExport.innerHTML = `<textarea>${document.querySelector('.inner-preview').innerHTML}
     </textarea>`
 }
 
@@ -723,20 +733,17 @@ function closePreview() {
 // LogOut
 function logOut() {
     localStorage.removeItem('credentials');
-    localStorage.removeItem('fname')
-    localStorage.removeItem('lname')
-    localStorage.removeItem('email')
-    window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
+    window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html'
 }
 
-window.addEventListener('DOMContentLoaded', () => {
+// Window Loads Get Certain data
+window.addEventListener('load', () => {
     const tokenAccess = JSON.parse(localStorage.getItem('credentials'))
     if (tokenAccess) {
-        // location.reload();
         handleDisplay();
         handleGetUser();
     } else {
-        window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
+        window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html'
     }
 })
 
@@ -757,7 +764,7 @@ function handleGetUser() {
     }).catch(error => console.log(error));
     let x = localStorage.getItem('fname');
     let y = localStorage.getItem('lname');
-    document.querySelector('.num-figure').innerHTML = `${localStorage.getItem('email')}`;
+    document.querySelector('.email-change').value = `${localStorage.getItem('email')}`;
     document.querySelector('.name').innerHTML = `${x} ${y}`;
     document.querySelectorAll('.initials').forEach(initial => {
         initial.innerHTML = `${x[0]}${y[0]}`;
@@ -783,6 +790,10 @@ function handleDisplay() {
             pd.name = "privacy"
             oPreview = generatePrivacyTemplate(pd);
             pWrapper.forEach(wrapper => {
+                counter.doc += 1;
+                if (counter.doc != 0) {
+                    document.querySelector('.doc-count').innerHTML = counter.doc / 2;
+                } else { }
                 wrapper.innerHTML += renderDocuments(pd);
             })
         })
@@ -791,6 +802,10 @@ function handleDisplay() {
         termsDocs.forEach(td => {
             td.name = "terms"
             tWrapper.forEach(wrapper => {
+                counter.doc += 1;
+                if (counter.doc != 0) {
+                    document.querySelector('.doc-count').innerHTML = counter.doc / 2;
+                } else { }
                 wrapper.innerHTML += renderDocuments(td);
             })
         })
@@ -900,3 +915,29 @@ function postPrivacySave() {
         modalTwo.classList.remove('add-progress');
     }, 300);
 }
+
+const profileForms = document.querySelectorAll('.profile-form');
+profileForms.forEach(form => { 
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        // const formData = new FormData(e.target);
+        // const formDataObj = {};
+        // formData.forEach((value, key) => {
+        //     formDataObj[key] = value;
+        // } );
+        // fetch(`${baseUrl}/users/${tokenAccess.id}`, {
+        //     method: 'PATCH',
+        //     headers: {
+        //         'Authorization': `Bearer ${tokenAccess.access}`,
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(formDataObj)
+        // }).then(res => {
+        //     return res.json()
+        // }).then(data => {
+        //     if (data.message === "User updated successfully") {
+        //         location.reload();
+        //     }
+        // }).catch(error => console.log(error));
+    })
+})

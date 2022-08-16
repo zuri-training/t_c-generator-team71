@@ -31,13 +31,14 @@ form.addEventListener('submit', e => {
                     incorrect.style.display = 'none';
                 }, 2500)
             } else {
-                window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html';
-    
+                document.querySelector('.success').style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                    window.location.href = 'https://zuri-training.github.io/t_c-generator-team71/login.html'
+                }, 3000)
             }
-    
-            console.log(res);
             return res.json()
-        }).then(data => console.log(data))
+        }).then(data => console.log(data.game))
             .catch(error => console.log(error));
     }
 })
