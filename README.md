@@ -21,7 +21,7 @@ Codebase for proj-t_c-generator - Team 71
 > The purpose of this project is to build a web application that helps users to generate their Terms and Conditions and Privacy Policy agreements for their company or website. 
 
 ### Project Live URL
-> <a href="https://bit.ly/3Q2pn1C">Termbuddy__Team71</a>
+> <a href="https://zuri-training.github.io/t_c-generator-team71/">Termbuddy__Team71</a>
 
 ### Project Design
 > <a href="https://bit.ly/3Q2pn1C">Termbuddy__Team71</a>
