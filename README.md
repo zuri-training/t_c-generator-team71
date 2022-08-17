@@ -87,52 +87,52 @@ The Authenticated User has access to: <br />
 - Export, share, download and embed the agreement onto their website 
 
 ## Collaboration
-1. Fork this repository <br />
+1. #### Fork this repository <br />
 Click the gray `Fork` button in the top right of this page. This creates *your* copy of the project and saves it as a new repository in your github account
 <br />
 
-2. Open your text editor and  Clone your forked repository 
+2. #### Open your text editor and  Clone your forked repository 
 ```js
   git clone https://github.com/YOUR_GITHUB_USERNAME/t_c-generator-team71.git
 ```
 <br />
 
-3. Switch to the cloned folder. If you're already in it, then skip this process 
+3. #### Switch to the cloned folder. If you're already in it, then skip this process 
 ```js
   cd t_c-generator-team71
 ```
 <br />
 
-4. Run the command `git status`. <br /> You should get a response like this
+4. #### Run the command `git status`. <br /> You should get a response like this
 ```js
     On branch master
     Your branch is up to date with 'origin/master'
 ```
 <br />
 
-5. Create a new branch for the feature you are adding and switch to that branch
+5. #### Create a new branch for the feature you are adding and switch to that branch
 ```js
     git checkout -b <your_branch_name>
 ```
 <br />
 
-6. To check you have correctly switch to your new branch. Run 
+6. #### To check you have correctly switch to your new branch. Run 
 ```js
     git branch -a
 ```
 you should see an asterisk sign * in front of your new branch
+<br /><br />
+
+7. #### Add your changes.
 <br />
 
-7. Add your changes.
-<br />
-
-8. After adding your changes, navigate back to the root directory. Run `cd..` till `t_c-generator-team71` is the last path in your terminal. For example
+8. #### After adding your changes, navigate back to the root directory. Run `cd..` till `t_c-generator-team71` is the last path in your terminal. For example
 ```js
     C:\Users\hp\Desktop\Merckury\zuri-training\t_c-generator-team71>
 ```
 <br />
 
-9. Stage your changes
+9. #### Stage your changes
 ```js
     git add "<name_of_your_file>"
 ```
@@ -144,13 +144,13 @@ or
 ```
 <br />
 
-10. Commit your changes
+10. #### Commit your changes
 ```js
     git commit -m "Add <your_file_names>"
 ```
 <br />
 
-11. Push your changes
+11. #### Push your changes
 - If you are PUSHING FOR THE FIRST TIME <br /><br />
  Set your upstream branch to the new branch you created and push that branch to your forked repo
 ```js
@@ -162,14 +162,14 @@ or
 ```
 <br />
 
-12. Run `git status` and you should get a response like this
+12. #### Run `git status` and you should get a response like this
 ```js
     "On branch <your_branch_name>"
     "Your branch is up to date with 'origin/<your_branch_name>'."
 ```
 <br />
 
-13. Go to your forked Repo on Github and Create a pull request
+13. #### Go to your forked Repo on Github and Create a pull request
 <br />
 
 14. Before you compare and create a pull request, make sure the base directory is `zuri-training/t_c-generator-team71` and the base branch is set to `develop`. <br />
