@@ -16,7 +16,7 @@ font-family: 'Poppins', sans-serif; */
     --place-icon-size: 18px;
     --primary-font: 'Mulish', sans-serif;
     --alt-font: 'Poppins', sans-serif;
-    --text-size: 14px;
+    --text-size: 16px;
     --margin-ss: 1rem;
     --margin-sm: 1.5rem;
     --margin-sx: 2rem;
@@ -110,7 +110,7 @@ button {
 }
 
 .container {
-    max-width: 996px;
+    /* max-width: 996px; */
     margin-left: .5rem;
     margin-right: .5rem;
 }
@@ -122,21 +122,25 @@ button {
 }
 
 .header {
-    height: 84px;
+    /* height: 84px; */
+    width: 98%;
+    max-width: 590px;
+    margin: 0 auto;
     background-color: #F5F5F5;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25); */
 }
 
 .nav {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: space-between;
-    height: 84px;
-    padding-bottom: 10px;
+    /* height: 84px; */
+    padding: 1.4rem 0;
 }
 
 .logo a {
-    font-size: var(--section-size);
+    /* font-size: var(--section-size); */
+    font-size: 1rem;
     color: #2B7A78;
     font-family: 700;
 }
@@ -225,7 +229,8 @@ button {
 
 
 .btn_altt {
-    padding: var(--btn-padding-two);
+    /* padding: var(--btn-padding-two); */
+    padding: 0.5rem 1.5rem;
     border-radius: 8px;
     background-color: #2B7A78;
     color: #fefefe;
@@ -274,12 +279,16 @@ button {
 
 .img_part {
     border-radius: 10px 10px 0 0;
-    display: grid;
+    /* display: grid; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--body-color);
 }
 
 .form_part {
-    background-color: #FEFEFE;
+
+    background-color: #FFFFFF;
     padding: 10px 14px;
     border-radius: 15px;
     display: flex;
@@ -290,7 +299,7 @@ button {
 }
 
 .sign_up_section {
-    padding: 3rem 0;
+    padding: 4rem 0 8rem 0;
 }
 
 .form {
@@ -299,12 +308,15 @@ button {
 }
 
 .input {
-    margin-bottom: 5px;
+    display: block;
+    margin-bottom: 0.3rem;
 }
 
 .form_field {
-    display: flex;
-    flex-direction: column;
+    /* display: flex; */
+    /* flex-direction: column; */
+    width: 98%;
+    margin: 0.7rem auto;
     position: relative;
     margin-bottom: 10px;
 }
@@ -314,8 +326,10 @@ button {
 }
 
 .svg_con_two {
+    margin-left: 0.2rem;
     display: flex;
     align-items: center;
+    margin-bottom: 0.9rem;
 }
 
 .input_field {
@@ -345,7 +359,7 @@ button {
 }
 
 .check_area {
-    margin: -22px 0 8px 0;
+    margin: 0;
 }
 
 .form_field .pass_err {
@@ -383,6 +397,7 @@ button {
 }
 
 .terms_two {
+    margin-left: 0.5rem;
     font-size: var(--text-size);
 }
 
@@ -458,6 +473,18 @@ small {
 }
 
 @media screen and (max-width:350px) {
+    .logo a {
+        font-size: 0.8rem;
+    }
+
+    .btn_altt {
+        font-size: 0.8rem;
+    }
+
+    .btn_alt a{
+        font-size: 0.8rem;
+
+    }
     .btn_other {
         min-width: 100px;
         max-width: 124px;
@@ -465,14 +492,25 @@ small {
 }
 
 @media screen and (min-width:500px) {
-    .split {
-        width: 400px;
+    .header {
+        width: 90%;
     }
+    .logo a {
+        font-size: (--text-size);
+    }
+
+    .split {
+        width: 80%;
+        max-width: 490px;
+        /* width: 400px; */
+    } 
 
     .btn_other {
         min-width: 145px;
         max-width: 184px;
     }
+
+
 
     .terms,
     .terms_two {
@@ -480,11 +518,53 @@ small {
     }
 
     .form_part {
-        padding: 16px 32px;
+        width: 100%;
+        padding: 16px 0;
+    }
+
+    .form_field {
+        width: 90%;
+        margin: 0.7rem auto;
+    }
+
+    .svg_con_two {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 1rem;
+    }
+
+    .btn_alt {
+        width: 90%;
+        margin: 0 auto;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        max-width: 660px;
+    }
+
+    .logo a {
+        font-size: 1.1rem;
+    }
+
+    .split {
+        width: 90%;
+        max-width: 580px;
+    }
+
+    .form_part {
+        width: 90%;
+        margin: 4rem auto 0 auto;
     }
 }
 
 @media screen and (min-width:996px) {
+    .header {
+        max-width: 1200px;
+    }
+
+
     .container {
         margin-left: auto;
         margin-right: auto;
@@ -496,27 +576,21 @@ small {
 
     .form_part,
     input {
-        background-color: #FEFEFE;
+        background-color: #FFFFFF;
     }
 
     .img_part {
         background-color: #72A6A5;
-    }
-
-    .form_part {
-        border-radius: 0 30px 30px 0;
-        margin-top: 0;
+        border-radius: 30px 0 0 30px;
+        width: 40%;
+        max-width: none; 
     }
 
     .split {
         width: 90%;
+        max-width: 1030px;
         flex-direction: row;
         border-radius: 30px;
-    }
-
-    .img_part {
-        border-radius: 30px 0 0 30px;
-        width: 406px;
     }
 
     small.pass_err {
@@ -524,10 +598,12 @@ small {
     }
 
     .form_part {
-        width: 590px;
-        padding: 32px 96px;
+        width: 60%;
+        max-width: 590px;
+        padding: 32px 64px;
+        margin: 0;
         min-height: 712px;
-
+        border-radius: 0 30px 30px 0;
     }
 
     .form_field .pass_err {
@@ -579,6 +655,7 @@ small {
 }
 
 @media screen and (min-width:1200px) {
+
     .split {
         width: 80%;
     }
