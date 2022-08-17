@@ -7,18 +7,23 @@ Codebase for proj-t_c-generator - Team 71
 ## Table of Content
 
 * [Overview](#overview)
+* [Client](#client)
 * [Project Live URL](#project-live-url))
 * [Project Design](#project-design)
 * [Project Documentation](#project-documentation)
 * [Directory Structure](#directory-structure)
 * [Project Status](#project-status)
 * [Tools Used](#tools-used)
-* [Client](#client)
 * [Features and Accessibilities](#features-and-accessibilities)
 * [Collaboration](#collaboration)
 
 # Overview
 > The purpose of this project is to build a web application that helps users to generate their Terms and Conditions and Privacy Policy agreements for their company or website. 
+
+## Client
+- Indivuduals
+- Startups
+- Large Corporations <br />
 
 ### Project Live URL
 > <a href="https://zuri-training.github.io/t_c-generator-team71/">Termbuddy__Team71</a>
@@ -45,10 +50,6 @@ Codebase for proj-t_c-generator - Team 71
 - Python | Django-Rest Framework
 - Fetch API <br />
 
-## Client
-- Indivuduals
-- Startups
-- Large Corporations <br />
 
 ## Features and Accessibilities
 
