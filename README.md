@@ -8,7 +8,7 @@ Codebase for proj-t_c-generator - Team 71
 
 * [Overview](#overview)
 * [Client](#client)
-* [Project Live URL](#project-live-url))
+* [Project Live URL](#project-live-url)
 * [Project Design](#project-design)
 * [Project Documentation](#project-documentation)
 * [Directory Structure](#directory-structure)
