@@ -25,7 +25,8 @@ Codebase for proj-t_c-generator - Team 71
 - ***Backend -*** The Backend code is found in the <a href="https://github.com/zuri-training/t_c-generator_team71_BE">Backend repository</a>.
 
 ## How To Contribute 
-- See `CONTRIBUTING.md` on how to contribute to this project.
+- See [`CONTRIBUTING.md`](https://github.com/zuri-training/t_c-generator-team71/blob/master/CONTRIBUTING.md) on how to contribute to this project.
+
 
 ## Client
 - Indivuduals
