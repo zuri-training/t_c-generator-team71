@@ -37,7 +37,7 @@ Codebase for proj-t_c-generator - Team 71
 > <a href="https://zuri-training.github.io/t_c-generator-team71/">Termbuddy__Team71</a>
 
 ### Project Design
-> <a href="https://bit.ly/3Q2pn1C">Termbuddy__Team71</a>
+> <a href="https://bit.ly/3KbWfDu">Termbuddy__Team71</a>
 
 ### Project Documentation
 > <a href="https://docs.google.com/document/d/1f3XPzsHjb1upvMaWUAjJ2tQgga4d2lb5t1awKSc7PWY/edit?usp=sharing">Termbuddy__Team71</a>
