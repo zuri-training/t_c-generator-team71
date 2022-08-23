@@ -15,7 +15,7 @@ Codebase for proj-t_c-generator - Team 71
 * [Project Status](#project-status)
 * [Tools Used](#tools-used)
 * [Features and Accessibilities](#features-and-accessibilities)
-* [Collaboration](#collaboration)
+* [How To Contribute](#how-to-contribute)
 
 # Overview
 > The purpose of this project is to build a web application that helps users to generate their Terms and Conditions and Privacy Policy agreements for their company or website. 
@@ -87,53 +87,45 @@ The Authenticated User has access to: <br />
 - Edit the agreement before generating it
 - Export, share, download and embed the agreement onto their website 
 
-## Collaboration
-1. #### Fork this repository <br />
+## How To Contribute
+- Fork this repository. 
 Click the gray `Fork` button in the top right of this page. This creates *your* copy of the project and saves it as a new repository in your github account
 
 
-2. #### Open your text editor and  Clone your forked repository 
+- Open your text editor and  Clone your forked repository 
 ```js
   git clone https://github.com/YOUR_GITHUB_USERNAME/t_c-generator-team71.git
 ```
 
 
-3. #### Switch to the cloned folder. If you're already in it, then skip this process 
+- Switch to the cloned folder. If you're already in it, then skip this process 
 ```js
   cd t_c-generator-team71
 ```
 
 
-4. #### Run the command `git status`. <br /> You should get a response like this
+- Run the command `git status`. You should get a response like this
 ```js
     On branch master
     Your branch is up to date with 'origin/master'
 ```
 
 
-5. #### Create a new branch for the feature you are adding and switch to that branch
+- Create a new branch for the feature you are adding and switch to that branch
 ```js
     git checkout -b <your_branch_name>
 ```
 
-
-6. #### To check you have correctly switch to your new branch. Run 
-```js
-    git branch -a
-```
-you should see an asterisk sign * in front of your new branch
+- Add your changes.
 
 
-7. #### Add your changes.
-
-
-8. #### After adding your changes, navigate back to the root directory. Run `cd..` till `t_c-generator-team71` is the last path in your terminal. For example
+- After adding your changes, navigate back to the root directory. Run `cd..` till the root directory is the last path
 ```js
     C:\Users\hp\Desktop\Merckury\zuri-training\t_c-generator-team71>
 ```
 
 
-9. #### Stage your changes
+- Stage your changes
 ```js
     git add "<name_of_your_file>"
 ```
@@ -145,38 +137,37 @@ or
 ```
 
 
-10. #### Commit your changes
+- Commit your changes
 ```js
-    git commit -m "Add <your_file_names>"
+    git commit -m "<commit_mes>"
 ```
 
 
-11. #### Push your changes
-- If you are PUSHING FOR THE FIRST TIME <br /><br />
- Set your upstream branch to the new branch you created and push that branch to your forked repo
+- Push your changes
+- If you are PUSHING FOR THE FIRST TIME, set your upstream branch to the new branch you created and push that branch to your forked repo
 ```js
     git push --set-upstream origin <your_branch_name>
 ```
-- If you have PUSHED A CHANGE BEFORE, and you want to push some more changes later. Run
+- If you have PUSHED A CHANGE BEFORE, but you want to push some more changes later. Run
 ```js
     git push origin <your_branch_name>
 ```
 
 
-12. #### Run `git status` and you should get a response like this
+- Run `git status` and you should get a response like this
 ```js
     "On branch <your_branch_name>"
     "Your branch is up to date with 'origin/<your_branch_name>'."
 ```
 
 
-13. #### Go to your forked Repo on Github and Create a pull request
+- Go to your forked Repo on Github and Create a pull request
 
-14. #### Before you compare and create a pull request, make sure the base directory is `zuri-training/t_c-generator-team71` and the base branch is set to `develop`. <br />
-If the base branch is set to `master`, click the dropdown beside it and select `develop`
+- Before you compare and create a pull request, make sure the base directory is `zuri-training/t_c-generator-team71` and the base branch is set to `develop`.<br />
+
+![Comparing pull request](https://user-images.githubusercontent.com/80987589/186118807-32df25fb-0e02-4e38-8a51-a5a2bd347512.jpeg)
+
+- Once that is done, Click on the `Create Pull Request`
 
 
-15. #### Once that is done, Click on the `Create Pull Request`
-
-
-16. ***DO NOT MERGE YOUR PULL REQUEST!***
+- #### DO NOT MERGE YOUR PULL REQUEST!
