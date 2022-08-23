@@ -165,7 +165,7 @@ or
 
 - Before you compare and create a pull request, make sure the base directory is `zuri-training/t_c-generator-team71` and the base branch is set to `develop`.<br />
 
-![Web capture_23-8-2022_101038_github com](https://user-images.githubusercontent.com/80987589/186119781-21ff2118-8a15-4568-b25e-de0be495076e.jpeg)
+![Comparing pull request](https://user-images.githubusercontent.com/80987589/186118807-32df25fb-0e02-4e38-8a51-a5a2bd347512.jpeg)
 
 - Once that is done, Click on the `Create Pull Request`
 
