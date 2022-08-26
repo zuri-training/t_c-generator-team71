@@ -24,7 +24,7 @@ const answerDropdown06 = document.getElementById('answer-dropdown06')
 
 
 
-arrowIcon01.onclick = displayAnswer01;
+selectEl01.onclick = displayAnswer01;
 
 function displayAnswer01() {
     selectEl01.classList.toggle('active')
@@ -32,7 +32,7 @@ function displayAnswer01() {
     arrowIcon01.classList.toggle('active')
 }
 
-arrowIcon02.onclick = displayAnswer02;
+selectEl02.onclick = displayAnswer02;
 
 function displayAnswer02() {
     selectEl02.classList.toggle('active')
@@ -40,7 +40,7 @@ function displayAnswer02() {
     arrowIcon02.classList.toggle('active')
 }
 
-arrowIcon03.onclick = displayAnswer03;
+selectEl03.onclick = displayAnswer03;
 
 function displayAnswer03() {
     selectEl03.classList.toggle('active')
@@ -48,7 +48,7 @@ function displayAnswer03() {
     arrowIcon03.classList.toggle('active')
 }
 
-arrowIcon04.onclick = displayAnswer04;
+selectEl04.onclick = displayAnswer04;
 
 function displayAnswer04() {
     selectEl04.classList.toggle('active')
@@ -56,7 +56,7 @@ function displayAnswer04() {
     arrowIcon04.classList.toggle('active')
 }
 
-arrowIcon05.onclick = displayAnswer05;
+selectEl05.onclick = displayAnswer05;
 
 function displayAnswer05() {
     selectEl05.classList.toggle('active')
@@ -64,7 +64,7 @@ function displayAnswer05() {
     arrowIcon05.classList.toggle('active')
 }
 
-arrowIcon06.onclick = displayAnswer06;
+selectEl06.onclick = displayAnswer06;
 
 function displayAnswer06() {
     selectEl06.classList.toggle('active')
