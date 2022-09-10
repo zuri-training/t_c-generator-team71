@@ -494,6 +494,7 @@ ul.nav-links li {
 
 .FAQs-section__select p {
     font-size: 1.2rem ;
+    cursor: pointer;
 }
 
 .FAQs-section__select img {

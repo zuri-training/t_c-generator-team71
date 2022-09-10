@@ -299,7 +299,7 @@ button {
 }
 
 .sign_up_section {
-    padding: 4rem 0 8rem 0;
+    padding: 3rem 0 8rem 0;
 }
 
 .form {
@@ -337,6 +337,10 @@ button {
     padding: 12px 40px;
     margin-top: 1px;
     position: relative;
+}
+
+input::placeholder {
+    font-size: 17px;
 }
 
 .x_icon {
@@ -496,7 +500,7 @@ small {
         width: 90%;
     }
     .logo a {
-        font-size: (--text-size);
+        font-size: 20px;
     }
 
     .split {
@@ -564,10 +568,18 @@ small {
         max-width: 1200px;
     }
 
+    .logo a {
+        font-size: 24px;
+    }
+
 
     .container {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .sign_up_section {
+        padding: 3rem 0 0 0
     }
 
     .section_title {
