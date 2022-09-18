@@ -16,6 +16,7 @@ Codebase for proj-t_c-generator - Team 71
 * [Project Status](#project-status)
 * [Tools Used](#tools-used)
 * [Features and Accessibilities](#features-and-accessibilities)
+* [The Team](#the-team)
 
 # Overview
 > The purpose of this project is to build a web application that helps users to generate their Terms and Conditions and Privacy Policy agreements for their company or website. 
@@ -90,4 +91,28 @@ The Authenticated User has access to: <br />
 - Edit the agreement before generating it
 - Export, share, download and embed the agreement onto their website 
 
+## The Team
+<details>
+<summary>Developers</summary>
 
+- <a href="https://github.com/0laolu">Olaoluwa</a> <br />
+- <a href="https://github.com/itzgeebee">Gideon</a> <br />
+- <a href="https://github.com/dasiy28">Gloria</a> <br />
+- <a href="https://github.com/Abshaibu">Shaibu</a> <br />
+- <a href="https://github.com/Ezeh20">Cii-Jay</a> <br />
+</details> 
+<details>
+<summary>Designers</summary>
+
+- <a href="#">Michael</a> <br />
+- <a href="#">Ashley</a> <br />
+- <a href="#">Muminat</a> <br />
+- <a href="#">Munirat</a> <br />
+- <a href="#">Daniel</a> <br />
+- <a href="#">JKings</a> <br />
+- <a href="#">Chinonye</a> <br />
+- <a href="#">Samuel</a> <br />
+- <a href="#">Baba Voss</a> <br />
+- <a href="#">LilyPeace</a> <br />
+- <a href="#">Mich</a> <br />
+</details>
